@@ -3,3 +3,4 @@ lead: Představní běžně používaných knihoven pro framework React
 lessons:
   - styled-components
   - formulare
+  - eslint
