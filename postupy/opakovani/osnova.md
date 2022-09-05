@@ -1,4 +1,4 @@
-## Základy Reactu
+## Osnova
 
 Z předchocích kurzů byste měli znát
 
