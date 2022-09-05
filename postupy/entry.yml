@@ -4,6 +4,6 @@ lessons:
   - opakovani
   - prace-se-stavem
   - lifecycle
-  - use-context
+  - state-lifting
   - state-management
   - interakce-s-domem
