@@ -1,6 +1,6 @@
 ## Motivace
 
-Sdílení dat a komunikace mezi komponentami je jedna z největších výzev v architektuře Reactových aplikací. Důležítá techníka používaná pro sdílení dat je takzvaný :em[state lifting]. Jde o přesunutí stavových dat z komponenty do některého z jejích předků. Díky tomu získají k těmto datům přístup další komponenty vw stromě.
+Sdílení dat a komunikace mezi komponentami je jedna z největších výzev v architektuře Reactových aplikací. Důležítá techníka používaná pro sdílení dat je takzvaný :em[state lifting]. Jde o přesunutí stavových dat z komponenty do některého z jejích předků. Díky tomu získají k těmto datům přístup další komponenty ve stromě.
 
 ### Ukázka
 
@@ -45,7 +45,7 @@ const App = () => {
 
 Nyní bychom chtěli vytvořit funkci `handleSubmit`, která provede odeslání dat z formuláře na server. Tady ovšem narazíme na problém: řetězec se zadaným e-mailem je uzavřený ve stavu komponenty `EmailInput`. K tomuto stavu nemá komponenta `App` přístup. Co si počít?
 
-Narazili jsme na klasickou situaci, kdy rodičovská komponenta potřebuje přístup k datům některého ze svých potomků. Přesně v tomto případě použijeme state lifting a přesuneme stav do z komponenty `EmailInput` do komponenty `App`. 
+Narazili jsme na klasickou situaci, kdy rodičovská komponenta potřebuje přístup k datům některého ze svých potomků. Přesně v tomto případě použijeme state lifting a přesuneme stav z komponenty `EmailInput` do komponenty `App`. 
 
 ```js
 const App = () => {
