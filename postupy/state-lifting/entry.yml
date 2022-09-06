@@ -1,4 +1,4 @@
 title: State lifting
-lead: Naučíme s techniku přesouvání stavu do předků
+lead: Naučíme se techniku přesouvání stavu nahoru ve stromě komponent
 sections:
-  - osnova
+  - motivace
