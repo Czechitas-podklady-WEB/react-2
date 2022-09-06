@@ -1,4 +1,4 @@
-## Osnova
+## Přehled
 
 Z předchocích kurzů byste měli znát
 
