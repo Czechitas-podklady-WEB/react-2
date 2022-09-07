@@ -13,8 +13,8 @@ Vyrobte v Reactu jednoduchý e-shop pro nový nábytkový řetězec XXXMuck. Web
 1. Přidejte do vašeho projektu routování. Komponenta `HomePage` bude mít cestu `/`. 
 1. Vytvořte zatím prázdnou komponentu `ShippingPage` u zapojte ji pod cestu `/shipping`.
 1. Dotvořte komponentu `ShippingPage` dle [dodaného designu](assets/shippingpage.png).
-1. Zařiďte, že po kliknutí na produkt na hlavní stránce se zobrazí stránka `ShippingPage`. 
-1. Po odeslání formuláře vypište zprávu, že zboží už je na cestě. Data zatím neodesílejte nikam na API. 
+1. Zařiďte, že po kliknutí na produkt na hlavní stránce se zobrazí stránka `ShippingPage`. Zatím nebudeme této stránce nijak předávat vybraný produkt. To si necháme do bonusu. 
+1. Jako reakci na odeslání formuláře vypište zprávu, že zboží už je na cestě. Data zatím nikam odesílat nebudeme. 
 
 **Bonus:**
 
