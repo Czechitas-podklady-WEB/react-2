@@ -1,4 +1,5 @@
 title: Interakce s DOMem
 lead: Zjistíme jak se v Reactu dá dostat k DOMu a kdy se to hodí
+access: claim
 sections:
   - osnova

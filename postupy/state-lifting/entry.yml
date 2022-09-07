@@ -1,4 +1,5 @@
 title: State lifting
 lead: Naučíme se techniku přesouvání stavu nahoru ve stromě komponent
+access: claim
 sections:
   - motivace
