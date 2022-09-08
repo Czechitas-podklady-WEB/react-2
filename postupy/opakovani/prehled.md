@@ -2,7 +2,7 @@
 
 Z předchocích kurzů byste měli znát
 
-* princip fungování Reactu,
+* princip fungování Reactu a založení nového projektu,
 * vytváření komponent,
 * práce s props,
 * zobrazování seznamů,
