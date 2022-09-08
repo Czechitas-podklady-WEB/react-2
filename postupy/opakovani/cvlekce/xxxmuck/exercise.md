@@ -13,5 +13,5 @@ Vyrobte v Reactu jednoduchý e-shop pro nový nábytkový řetězec XXXMuck. Web
 1. Přidejte do vašeho projektu routování. Komponenta `HomePage` bude mít cestu `/`. 
 1. Vytvořte zatím prázdnou komponentu `ProductPage` u zapojte ji pod cestu `/product`.
 1. Dotvořte komponentu `ProductPage` dle [dodaného designu](assets/productpage.png).
-1. Zařiďte, že po kliknutí na produkt na hlavní stránce se zobrazí stránka `ProductPage`. Zatím nebudeme této stránce nijak předávat vybraný produkt. 
-1. Na `ShippingPage` zobrazte vybraný produkt. K tomu je potřeba si předat `id` produktu v URL stránky a použít hook `useParams`. Jednotlivé produkty pod jejich `id` najdete na [tomto endpointu](https://apps.kodim.cz/react-2/xxxmuck/products/2c6VoCaD).
+1. Zařiďte, že po kliknutí na produkt na hlavní stránce se zobrazí stránka zatím prázdná `ProductPage` bez produktu.
+1. Na `ShippingPage` zobrazte vybraný produkt. K tomu je potřeba si předat `id` produktu v URL stránky a použít hook `useParams`. Jednotlivé produkty pod jejich `id` najdete na [tomto endpointu](https://apps.kodim.cz/react-2/xxxmuck/products/2c6VoCaD). Tlačítko pro obejdnání zatím nebude funkční. 
