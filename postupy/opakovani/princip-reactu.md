@@ -9,7 +9,7 @@ V praxi je standardem pro zakládání nových projektů v Reactu **create-react
 Pro účely našeho kurzu je to kanón na vrabce. Pro příklady a úkoly v rámci kurzu nám stačí jen pár množstí nezbytně nutných balíčků. Vytvořili jsem vlastní **create-czechitas-app**, pomocí kterého budeme nové projekty vytvářet. Na příkazové řádce použijeme:
 
 ```sh
-$ npx create-czechitas-app muj-projekt
+npx create-czechitas-app muj-projekt
 ```
 
 Vytvoří se složka `muj-projekt`, kam se nainstalují potřebné balíčky, nastaví se Webpack a vytvoří se základní kostra vzorového projektu, kterou si můžeme dále upravovat.
@@ -40,4 +40,28 @@ import { createRoot } from 'react-dom/client';
 
 const appRoot = createRoot(document.querySelector('#app'));
 appRoot.render(<h1 className="title">Moje stránka</h1>);
+```
+
+### Fragment
+
+Metoda `render` jako parametr akceptuje pouze jeden JSX element. Pokud bychom chtěli na stránce vykreslit např. nadpis a odstavec, nebude náš příklad fungovat.
+
+```jsx
+appRoot.render(
+	<h1 className="title">Moje stránka</h1>
+	<p>Textový obsah stránky</p>
+);
+```
+
+Můžeme samozřejmě vše zabalit do `divu` nebo jiného prvku, ale pak máme v aplikaci prvky, které tam nutně nepotřebujeme a mohou nám třeba i zoůsobit problémy se stylováním.
+
+React nabízí speciální element, kterému říká *fragment*. Vypadá jako prázdná HTML značka, do které můžeme zabalit další elementy, ale která se ve výsledné stránce neobjeví.
+
+```jsx
+appRoot.render(
+	<>
+		<h1 className="title">Moje stránka</h1>
+		<p>Textový obsah stránky</p>
+	</>
+);
 ```

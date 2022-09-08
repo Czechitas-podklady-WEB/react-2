@@ -8,5 +8,5 @@ Z předchocích kurzů byste měli znát
 * zobrazování seznamů,
 * práce s `useState` a `useEffect`
 * obsluha událostí,
-* komunikoce mezi komponentami,
+* komunikace mezi komponentami,
 * základy React Routeru (v6) pro vytváření vícestránkových aplikací.

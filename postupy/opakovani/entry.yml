@@ -3,4 +3,10 @@ lead: Zopakujeme si znalosti Reactu z předchozích kurzů
 sections:
   - prehled
   - princip-reactu
+  - komponenty
+  - seznamy
+  - udalosti
+  - stav
+  - efekty
+  - router
   - projektik
