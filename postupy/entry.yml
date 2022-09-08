@@ -2,7 +2,7 @@ title: Doporučené postupy
 lead: Často používané postupy a techniky při programování v Reactu
 lessons:
   - opakovani
-  - prace-se-stavem
+  - hodnoty-stav
   - lifecycle
   - state-lifting
   - state-management
