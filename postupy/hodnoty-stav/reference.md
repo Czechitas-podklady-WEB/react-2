@@ -43,3 +43,5 @@ Po této operaci bude proměnná `x` obsahovat hodnotu `[1, 2, 3, 4]`. Řetězec
 ```
 
 Tím jsme však vyrobili zcela **nový** řetězec `'petra'`. V proměnné `name` je pořád obsažena stará hodnota `petr`. 
+
+Z těchto důvodů si můžeme představovat, že řetězec `'petr'` je pouze jeden. Můžeme jej použít na deseti místech, ale na žádném místě jej nikdy nezměníme na nic jiného. Na druhou stranu, polí `[1, 2, 3]` může existovat spousta a každé z ních se může během svého života proměnit až k nepoznání.
