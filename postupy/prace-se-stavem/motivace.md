@@ -8,8 +8,8 @@ Vytvořme nejdříve několik nevinně vypadajících proměnných:
 const age1 = 25;
 const age2 = 25;
 
-const name1 = 'robert';
-const name2 = 'robert';
+const name1 = 'petr';
+const name2 = 'petr';
 
 const workout1 = [5, 3, 7];
 const workout2 = [5, 3, 7];
@@ -41,6 +41,8 @@ Aby zmatení nebylo málo, provedeme ještě následující experiment:
 V prvním případě jsme jako porovnání dvou zdánlivě stejných hodnot obdrželi `false`. V druhém případě jsme naoopak při porovnání dvou očekávaně odlišných hodnot obdrželi `true`. Zkusme ještě něco naprosto přímočarého:
 
 ```js
+> 'petr' === 'petr'
+true
 > [1, 2, 3] === [1, 2, 3]
 false
 ```
