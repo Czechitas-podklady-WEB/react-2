@@ -1,49 +1,44 @@
 ## Imutabilita
 
-Důvod pro podivné chování odhalené v předchozí sekci spočívá v tom, že v JavaScriptu obash řetězců nelze měnit, kdežto u polí to možné je. Není problém napsat
+Klíčem k pochopení podivností z předchozí sekce je fakt, že hodnoty v JavaScriptu se dělit do dvou kategorií podle toho, jestli jde už jednou vytvořená hodnota změnit nebo ne.
+
+Pokud například vytvoříme nějaké pole, můžeme jej dále měnit: nahrazovat prvky za jiné, přidávat prvky apod. 
 
 ```js
-> const x = [1, 2, 3];
-> x.push(4)
+> const x = [1, 2, 3]
+> x.push(8)
+> x[0] = 5
+> x
+[5, 2, 3]
+> x.push(8)
+> x
+[5, 2, 3, 8]
 ```
 
-Po této operaci bude proměnná `x` obsahovat hodnotu `[1, 2, 3, 4]`. Řetězec však žádnou takovou operaci nemá. Pokud chceme k řetězci něco přidat, napíšeme prostě
+Vidíme, že pole uložené v proměnné :var[x] se mění. Podobně můžeme zacházet i s objekty.
 
 ```js
-> const name = 'petr';
-> 'petr' + 'a'
-'petra'
+> const time = { hours: 5, mins: 21 }
+> time.hours = 8
+> time
+{ hours: 8, mins: 21 }
+> time.secs = 35
+> time
+{ hours: 8, mins: 21, secs: 35 }
 ```
 
-Tím jsme však vyrobili zcela **nový** řetězec `'petra'`. V proměnné `name` je pořád obsažena stará hodnota `petr`. Pokud nějaká hodnota nejde změnit, říkáme odborně, že je :em[immutable]. Řetězce jsou vždy immutable a to jak v JavaScriptu tak ve většině ostatních jazyků.
-
-Protože řetězce nejde měnit, představujeme si, že řetězec `'petr'` je pouze jeden. Můžeme jej použít na deseti místech, a pořád to bude tentýž `'petr'`. Všimněte si, že stejným způsobem fungují především čísla. Například číslo 25 logicky existuje v celém vesmíru pouze jedno. Nemáme více různých čísel 25. Kdyby existovalo více různých čísel 25, následující porovnání by nefungovalo, protože bychom nevědli, se kterým číslem 25 vlastně porovnáváme. 
+Zajímavé je, že s řetězci takové věci dělat nelze. Řetězce nenabízají žádnou metodu `push` a jí podobné. Jednou vytvořený řetězec zůstává navždy stejný. Pokud chceme k řetězcí přidat písmenko, musím použít operátor sčítání a vytvořit tak řetězec nový. 
 
 ```js
-> const age = 25
-> age === 25
-true
+> const name = 'Petr'
+> name + 'a'
+'Petra'
+> name
+'Petr'
 ```
 
-Díky tomu, že řetězce jsou stejně jako čísla immutable, funguje pak stejným způsboem i následující porovnání. 
+Vidíme, že proměnná :var[name] pořád obsahuje hodnotu `Petr`. 
 
-```js
-> const name = 'petr'
-> name === 'petr'
-true
-```
+Pokud nějaká hodnota nejde změnit, říkáme odborně, že je takzvaně :em[immutable]. Řetězce jsou vždy immutable a to jak v JavaScriptu tak ve většině ostatních jazyků. Naopak objekty a pole jsou :em[mutable]. 
 
-Na druhou stranu, pole a objekty jsou v JavaScriptu :em[mutable]. Polí `[1, 2, 3]` může skutečně existovat více. Proto následující porovnání nefunguje.
-
-```js
-> const x = [1, 2, 3];
-> x === [1, 2, 3]
-false
-```
-
-Pokaždé, když použijeme hodnotu `[1, 2, 3]`, JavaScript vytvoří úplně nové pole, i když se stejným obsahem. Ve chvíli kdy porovnáváme proměnnou `x`, vytvořili jsme zcela novou hodnotu `[1, 2, 3]`, která už nemá s hodnotou v proměnné nic společného. Ještě lépe to ukáže následující výraz.
-
-```js
-> [1, 2, 3] === [1, 2, 3]
-false
-```
+Imutabilita má dalekosáhlé důsledky. Ty hlavní prozkoumáme ve zbytku této lekce.
