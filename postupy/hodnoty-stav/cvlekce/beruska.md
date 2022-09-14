@@ -11,5 +11,3 @@ Upravíme stav v Reactové hře, kde ovládáte berušku a chodíte s ní po roz
 1. Upravte komonentu `App` tak, aby používala jeden objektový stav `ladybugState`. Zachovejte immutabilitu stavu a měňte jej pomocí spreadů.
 1. Upravte komponentu `Ladybug` tak, aby místo tří prop používala pouze jednu, ve které očekává celý objekt.
 1. Vyzkoušejte, že vaše hra funguje. 
-
-**Poznámka**: Jistě si všimnete, že pokud déle podržíte klávesu, beruška nestíhá dostatečně rychle reagovat. Je to proto, že zrovna na tento typ hry není React ta nejlepší volba. Existují způsoby, jak toto omezení obejít a ukážeme si jej v lekci o interakci s DOMem. 
