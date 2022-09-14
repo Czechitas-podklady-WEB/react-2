@@ -1,8 +1,8 @@
 ## Imutabilita
 
-Klíčem k pochopení podivností z předchozí sekce je fakt, že hodnoty v JavaScriptu se dělit do dvou kategorií podle toho, jestli jde už jednou vytvořená hodnota změnit nebo ne.
+Klíčem k pochopení podivností z předchozí sekce je fakt, že hodnoty v JavaScriptu se dělí do dvou kategorií podle toho, jestli jde už jednou vytvořená hodnota změnit nebo ne.
 
-Pokud například vytvoříme nějaké pole, můžeme jej dále měnit: nahrazovat prvky za jiné, přidávat prvky apod. 
+Pokud například vytvoříme pole, můžeme jej dále měnit: nahrazovat prvky za jiné, přidávat prvky apod.
 
 ```js
 > const x = [1, 2, 3]
@@ -27,12 +27,12 @@ Vidíme, že pole uložené v proměnné :var[x] se mění. Podobně můžeme za
 { hours: 8, mins: 21, secs: 35 }
 ```
 
-Zajímavé je, že s řetězci takové věci dělat nelze. Řetězce nenabízají žádnou metodu `push` a jí podobné. Jednou vytvořený řetězec zůstává navždy stejný. Pokud chceme k řetězcí přidat písmenko, musím použít operátor sčítání a vytvořit tak řetězec nový. 
+Zajímavé je, že s řetězci takové věci dělat nelze. Metody jako `replace`, `toUpperCase`, `trim` a další vždy vytváří nový řetězec zatímco původní zůstává beze změny. Jednou vytvořený řetězec tak zůstává navždy stejný. 
 
 ```js
 > const name = 'Petr'
-> name + 'a'
-'Petra'
+> name.toUpperCase()
+'PETR'
 > name
 'Petr'
 ```
