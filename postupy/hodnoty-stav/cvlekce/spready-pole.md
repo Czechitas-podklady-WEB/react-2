@@ -3,7 +3,7 @@ title: Jednoduché spready polí
 demand: 2
 ---
 
-Všechny následující úkoly dělejte v konzoli. Na začátku si připravte cvičené pole
+Všechny následující úkoly dělejte v konzoli. Na začátku si připravte cvičné pole
 
 ```js
 > const names = ['jana', 'pavel', 'eva', 'jitka', 'radek', 'zuzka', 'ondra']
