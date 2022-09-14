@@ -5,6 +5,7 @@ sections:
   - motivace
   - imutabilita
   - spready
+  - cv-imutabilita
   - reference
   - melkost-hloubka
   - react
