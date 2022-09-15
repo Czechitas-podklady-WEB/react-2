@@ -9,7 +9,7 @@ Ve všech následujících úkolech vytvořte vlastní funkcí dle zadání. Vš
 1. Vytvořte funkci `remove`, která obdrží pole a index. Funkce smaže prvek na zadaném indexu.
 1. Vytvořte funkci `swap`, která obdrží pole a dva indexy. Funkce prohodí prvky na těchto indexech.
 
---- solution
+---solution
 ```js
 const reversed = (input) => {
   return [...input].reverse();
