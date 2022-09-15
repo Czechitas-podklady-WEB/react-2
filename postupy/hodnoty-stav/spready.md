@@ -9,7 +9,7 @@ V praxi často narazíme na potřebu chovat se k polím a k objektům jako k imm
 [8, 1, 2, 3]
 ```
 
-Metoda `unshift` naše pole drze změnila. Říkáme, že pracuje takzvaně "na místě". Co kdybychom však chtěli původní pole zachovat? V takovém případě nám pomůžou takzvané :em[spready]. Spread můžeme použít na libovolném místě mezi hranatými závorkami, když vytváříme nové pole. Obsah původního pole se pak jakoby "vyleje" na zadané místo. 
+Metoda `unshift` naše pole drze změnila. Říkáme, že pracuje takzvaně "na místě". Co kdybychom však chtěli původní pole zachovat? V takovém případě nám pomůžou takzvané :em[spready]. Spread můžeme použít na libovolném místě mezi hranatými závorkami, když vytváříme nové pole. Obsah původního pole se pak jakoby "vyleje" na zadané místo.
 
 ```js
 > const x = [1, 2, 3];
@@ -78,7 +78,7 @@ Immutable:
 Na místě:
 
 ```js
-> x.shift()]
+> x.shift()
 ```
 
 Immutable: tady si prostě vyrobíme kopii pole
@@ -90,7 +90,7 @@ Immutable: tady si prostě vyrobíme kopii pole
 
 ### Spready objektů
 
-Spready objektů fungují podobně jako spready polí. 
+Spready objektů fungují podobně jako spready polí.
 
 ```js
 > const time = { hours: 5, mins: 21 }
@@ -108,7 +108,7 @@ Pozor však na to, že pokud objekty obsahují stejnou vlastnost, použije se v�
 { hours: 5, mins: 21 }
 ```
 
-Pomocí objektových spreadů můžeme snadno nahradit různé objektové mutable operace za immutable. 
+Pomocí objektových spreadů můžeme snadno nahradit různé objektové mutable operace za immutable.
 
 Například změna nebo přidání vlasnosti.
 
@@ -128,14 +128,14 @@ Immutable:
 { hours: 10, mins: 21, secs: 35 }
 ```
 
-### Složítější operace
+### Složitější operace
 
-Pole mají dvě důležité metody, které pracují na místě, to znamená, že modifikují původní hodnotu. Jsou to `sort` a `reverse`. Pokud bychom chtěli takovou operaci mít immutable, nezbyde nám, než vyrobit kopii pole a provést operaci na ní. 
+Pole mají dvě důležité metody, které pracují na místě, to znamená, že modifikují původní hodnotu. Jsou to `sort` a `reverse`. Pokud bychom chtěli takovou operaci mít immutable, nezbyde nám, než vyrobit kopii pole a provést operaci na ní.
 
-Složitejší immutable operace, které jsou specifické pro náš projekt, se pak hodí naprogramovat jako vlastní funkce. Dobrým kandidátem je například již zmíněné přidání prvku na zadanou pozici. 
+Složitejší immutable operace, které jsou specifické pro náš projekt, se pak hodí naprogramovat jako vlastní funkce. Dobrým kandidátem je například již zmíněné přidání prvku na zadanou pozici.
 
 ```js
 const addToIndex = (items, element, index) => {
-  return [...items.slice(0, index), element, ...items.slice(index + 1)]
+  return [...items.slice(0, index), element, ...items.slice(index)]
 };
 ```
