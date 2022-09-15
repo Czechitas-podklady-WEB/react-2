@@ -18,3 +18,50 @@ Ve všech následujících úkolech vytvořte vlastní funkcí dle zadání. Vš
    [12, 13, 14, 15, 10, 11]
    ```
 1. Vytvořte funkci `shuffle`, která náhodně zamíchá prvky v poli.
+
+---solutio
+
+```js
+const drag = (array, from, to) => {
+  const result = [...array];
+  result.splice(from, 1);
+  result.splice(to, 0, array[from]);
+  return result;
+};
+
+const rotate = (array, steps) => {
+  const result = [...array];
+  const tail = result.splice(-steps);
+  result.unshift(...tail);
+  return result;
+};
+
+//trochu kryptická varianta, ale také funguje
+const rotate2 = (array, steps) => {
+  const tmp = [...array];
+  return [...tmp.splice(-steps), ...tmp];
+};
+
+const shuffle = (array) => {
+  const result = [...array];
+  result.sort(() => Math.random() - 0.5);
+  return result;
+};
+
+//ověření řešení
+
+const mojePole = [10, 11, 12, 13, 14, 15];
+
+console.log("drag", drag(mojePole, 4, 1), "očekáváno", [10, 14, 11, 12, 13, 15]);
+console.log("Je mojePole nezměněné?", mojePole);
+
+console.log("rotate", rotate(mojePole, 4), "očekáváno", [12, 13, 14, 15, 10, 11]);
+console.log("Je mojePole nezměněné?", mojePole);
+
+console.log("rotate2", rotate2(mojePole, 4), "očekáváno", [12, 13, 14, 15, 10, 11]);
+console.log("Je mojePole nezměněné?", mojePole);
+
+console.log("shuffle", shuffle(mojePole));
+console.log("shuffle", shuffle(mojePole));
+console.log("Je mojePole nezměněné?", mojePole);
+```
