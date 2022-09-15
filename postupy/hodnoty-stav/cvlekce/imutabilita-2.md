@@ -19,7 +19,7 @@ Ve všech následujících úkolech vytvořte vlastní funkcí dle zadání. Vš
    ```
 1. Vytvořte funkci `shuffle`, která náhodně zamíchá prvky v poli.
 
----solutio
+---solution
 
 ```js
 const drag = (array, from, to) => {
