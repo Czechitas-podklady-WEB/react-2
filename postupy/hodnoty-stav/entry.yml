@@ -1,6 +1,6 @@
 title: Práce se stavovými hodnotami
 lead: Půjdeme víc do hloubky ohledně reprezentace stavu v komponentách pomocí různých typů hodnot
-access: claim
+# access: claim
 sections:
   - motivace
   - imutabilita
