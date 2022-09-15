@@ -11,4 +11,10 @@ Ve všech následujících úkolech vytvořte vlastní funkcí dle zadání. Vš
    > drag([10, 11, 12, 13, 14, 15], 4, 1)
    [10, 14, 11, 12, 13, 15]
    ```
+1. Vytvořte funkci `rotate`, která obdrží pole a kladné celé číslo. Funkce odrotuje pole doprava o zadaný počet kroků. 
+   Příklad:
+   ```js
+   > rotate([10, 11, 12, 13, 14, 15], 4)
+   [12, 13, 14, 15, 10, 11]
+   ```
 1. Vytvořte funkci `shuffle`, která náhodně zamíchá prvky v poli.
