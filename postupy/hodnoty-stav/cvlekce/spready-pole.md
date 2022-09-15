@@ -17,7 +17,7 @@ Všechny následující operace proveďte jako immutable
 1. Odstraňte poslední prvek pole.
 1. Odstraňte z pole hodnotu na třetím indexu.
 
---- solution
+---solution
 ```js
 const names = ["jana", "pavel", "eva", "jitka", "radek", "zuzka", "ondra"];
 
