@@ -6,7 +6,7 @@ demand: 2
 Všechny následující úkoly dělejte v konzoli. Na začátku si připravte cvičný objekt:
 
 ```js
-> const ticket = { from: 'Praha', to: 'Lisabon', currency: 'EUR', price: 115 }}
+> const ticket = { from: 'Praha', to: 'Lisabon', currency: 'EUR', price: 115 }
 ```
 
 Všechny následující operace proveďte jako immutable
