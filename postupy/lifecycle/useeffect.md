@@ -19,11 +19,11 @@ import React, {useEffect} from 'react';
 
 function Item({amount}) {
 
-	useEffect() {
+	useEffect(
 		() => {
 			console.log('překreslení komponenty')
 		}
-	}
+	)
 
 	return (
 		<div>Zboží - {amount} ks</div>
@@ -36,34 +36,34 @@ Jako první parametr do `useEffect` předáváme vždy funkci, které se má vyk
 Chceme-li, aby se náš efekt spouštěl po **každé aktualizaci komponenty**, tak druhý parametr úplně vynecháme.
 
 ```jsx
-useEffect() {
+useEffect(
 	() => {
 		// spustí se po každé aktualizaci komponenty
 		// včetně úvodního vykreslení
 	}
-}
+)
 ```
 
 Když jako druhý parametr uvedeme prázdné pole, spustí se efekt pouze po **prvním vykreslení komponenty**. To nejčastěji používáme např. k úvodnímu načtení dat z API do komponenty, nastartování časovačů, apod.
 
 ```jsx
-useEffect() {
+useEffect(
 	() => {
 		// spustí se jenom po úvodním vykreslení
 	},
 	[]
-}
+)
 ```
 
 Chceme-li, aby se náš kód spustil jako reakce na změnu stavu nebo konkrétních props, uvedeme do pole seznam závislostí (stavové proměnné nebo props). To můžeme použít například ve chvíli, kdy chceme z API načíst vyfiltrovaná data, protože uživatel do hledání začal psát název zboží, apod.
 
 ```jsx
-useEffect() {
+useEffect(
 	() => {
 		// spustí se po změně prop 'amount'
 	},
 	[amount]
-}
+)
 ```
 
 Pokud je uvnitř komponenty použit `useEffect` vícekrát, spouští se v takové pořadí, v jakém jsou uvedeny v kódu.
@@ -75,7 +75,7 @@ Jsou situace, kdy potřebujeme spustit kód ve chvíli, kdy komponenta zaniká. 
 Pokud funkce, která se spouští v `useEffect`, vrátí další funkci, tak se tato funkce zavolá těsně před tím, než komponenta zanikne.
 
 ```jsx
-useEffect() {
+useEffect(
 	() => {
 		// tento kód se spustí
 		// jenom po úvodním vykreslení
@@ -86,5 +86,5 @@ useEffect() {
 		}
 	},
 	[]
-}
+)
 ```

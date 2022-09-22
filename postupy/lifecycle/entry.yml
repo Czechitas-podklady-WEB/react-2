@@ -4,5 +4,5 @@ access: claim
 sections:
   - osnova
   - lifecycle
-  - komponenta
+  - useeffect
   - uzavery
