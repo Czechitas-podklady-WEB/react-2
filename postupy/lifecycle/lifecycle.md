@@ -1,28 +1,30 @@
 ## Životní cyklus komponenty
 
-Jako ilustrační příklad pro následující výklad si vezměme jednoduchou komponentu `MenuItem`, která představuje položku v nějaké menu. 
+Jako ilustrační příklad pro následující výklad si vezměme jednoduchou komponentu `ProductItem`, která představuje nějaké zboží v e-shopu.
 
 ```js
-const MenuItem = ({ text }) => {
-  const [active, setActive] = useState(false);
+const ProductItem = ({ name, price, amount }) => {
+  const [inCart, setInCart] = useState(false);
 
   return (
-    <div className={`menu-item${active ? ' active' : ''}`}>
-      {text}
+    <div className="product-item">
+      <h2>{name}</h2>
+      <p>Price: {price}</p>
+      <button>Add to cart</button>
     </div>
   );
 };
 ```
 
-Na začátek je dobré zdůraznit, že každá komponenta v Reactu je obyčejná JavaScriptová funkce. React potom tuto funkci volá v různých fázích životního cyklu komponenty. 
+Všimněte si, že komponenta `ProductItem` je vlastně obyčejná JavaScriptové funkce. V moderním Reactu se již zcela výhradně používají :term{cs="funkční komponenty" en="function components"}. Každá komponenta je pak obyčejná funkce vracející JSX. Sám React pak funkci volá během jejích životního cyklu a vrácené JSX vykreslí do DOMu prohlížeče.
 
-:term{cs="Životním cyklem" en="lifecycle"} komponenty označujeme fáze, kterými komponenta prochází během své existence v aplikaci. Komponenta během svého životního cyklu projde třemi fázemi:
+:term{cs="Životním cyklem" en="lifecycle"} komponenty označujeme fáze, kterými komponenta prochází během své existence v aplikaci. Komponenta během svého životního cyklu projde těmito třemi fázemi:
 
-1. **Mount**, neboli fáze **připojení**. Jde o první volání funkce komponenty Reactem a život komponenty zde začíná. Výsledkem této fáze je vytvoření DOMu komponenty a jeho vložení do DOMu stránky. Tato fáze nastává pouze jednou a často se jí říká :term{cs="úvodní vykreslení" en="initial render"}.
+1. **Mount**, neboli fáze **připojení**. Jde o první volání funkce komponenty Reactem a život komponenty zde začíná. Výsledkem této fáze je první vytvoření DOMu komponenty a jeho vložení do stránky. Tato fáze nastává pouze jednou a často se jí říká :term{cs="úvodní vykreslení" en="initial render"}.
 
-2. **Update**, neboli fáze **aktualizace** komponenty. Je to fáze, kdy React znova volá funkci komponenty aby aktualizoval jeji DOM. Tato fáze za život komponenty může nastat mnohokrát a říká se jí :term{cs="překreslí" en="re-render"}.
+2. **Update**, neboli fáze **aktualizace** komponenty. Je to fáze, kdy React znova volá funkci komponenty aby aktualizoval jeji DOM. Tato fáze za život komponenty může nastat mnohokrát a říká se jí :term{cs="překreslení" en="re-render"}.
 
-3. **Unmount**, neboli fáze **odpojení** komponenty nastáve. Nastává pouze jednou a to ve chvíli, kdy je komponenta odstraněna z DOMu stránky. V tuto chvíli se funkce komponenty nevolá. 
+3. **Unmount**, neboli fáze **odpojení** komponenty nastává pouze jednou a to ve chvíli, kdy je komponenta odstraněna z DOMu stránky. V tuto chvíli se funkce komponenty jíž nevolá.
 
 Ve starších verzích Reactu, kdy se komponenty vytvářely výhradně jako javascriptové třídy *(class components)*, měla komponenta přímo metody, které se spouštěly v konkrétních fázích životního cyklu.
 
@@ -31,14 +33,17 @@ Ve starších verzích Reactu, kdy se komponenty vytvářely výhradně jako jav
 Každé překreslení komponenty znamená zavolání její funkce. To můžeme snadno zachytit například pomocí `console.log` přímo v těle. 
 
 ```js
-const MenuItem = ({ text }) => {
-  const [active, setActive] = useState(false);
+const ProductItem = ({ name, price, amount }) => {
+  const [inCart, setInCart] = useState(false);
 
   console.log('render');
 
   return (
-    <div className={`menu-item${active ? ' active' : ''}`}>
-      {text}
+    <div className="product-item">
+      <h2>{name}</h2>
+      <p>Price: {price}</p>
+      <p>In stock: {amount}</p>
+      <button>Add to cart</button>
     </div>
   );
 };

@@ -1,34 +1,49 @@
 ## Funkční komponenty v Reactu a useEffect
 
-My v našem kurzu používáme tzv. :term{cs="funkční komponenty" en="function components"}. To jsou jednoduše funkce, které React spustí a jejich výsledek nějakým způsobem použije. Např. JSX vrácené z komponenty vykreslí do DOM prohlížeče.
+Je velmi důležité si uvědomit, že React skutečně spustí celou funkci tvořící naši komponentu pokaždé, když potřebuje komponentu překreslit. React **naplánuje** :term{cs="vykreslení" en="render"} komponenty pokaždé, když se změní *stav* uvnitř komponenty, nebo její *props*. Všimněte si zvýrazněného slova **naplánuje**.
 
-Je velmi důležité si uvědomit, že React skutečně spustí celou funkci tvořící naši komponentu pokaždé, když potřebuje komponentu překreslit. Později se vrátíme k tomu, jaké to má důsledky.
+### Plánování překreslení
 
-### Překreslení komponenty
+Pro ilustraci rozšiřme malinko komponentu `ProductItem` tak, že po klinutí na tlačítko jakoby přidáme produkt do košíku, což v tuto chvíli bude znamenat pouze změnu stavu `inCart`. 
 
-React **naplánuje** :term{cs="vykreslení" en="render"} komponenty pokaždé, když se změní *stav* uvnitř komponenty, nebo její *props*. Všimněte si zvýrazněného slova **naplánuje**.
+```jsx
+const ProductItem = ({ name, price, amount }) => {
+  const [inCart, setInCart] = useState(false);
 
-Když pomineme úvodní vykreslení komponenty, tak k jejímu překreslení dojde pokaždé, když se změní stav komponenty nebo její props. K překreslení však nedojde úplně okamžitě. React se pokusí najít ten nejlepší moment, aby optimalizoval výkon aplikace na co největší rychlost.
+  const handleBuy = () => {
+    setInCart(true);
+    console.log(inCart);
+  }
+
+  return (
+    <div className="product-item">
+      <h2>{name}</h2>
+      <p>Price: {price}</p>
+      <p>In stock: {amount}</p>
+      <button onClick={handleBuy}>Add to cart</button>
+    </div>
+  );
+};
+```
+
+Všimněte si, že ihned po volání funkce `setInCart` vypíšeme do konzole hodnotu stavu. Pokud čekáte, že se do konzole po kliknutí na tlačítko vypíše `true`, budete zklamáni. Ke změně stavu a k překreslení komponenty nedojde totiž okamžitě. React se pokusí najít ten nejlepší moment, aby optimalizoval výkon aplikace na co největší rychlost. Tento moment rozhodně nastane dávno poté co funkce `handleBuy` skončí. Uvnitř jejího těla tedy bude stav mít stále starou hodnotu. 
 
 ### useEffect
 
 Ve funkční komponentě reagujeme na životní cykly komponenty pomocí `useEffect`. To se týká jak úvodního vykreslení, aktualizace komponenty, nebo jejího zániku.
 
 ```jsx
-import React, {useEffect} from 'react';
+const ProductItem = ({ name, price, amount }) => {
+  const [inCart, setInCart] = useState(false);
 
-function Item({amount}) {
+  useEffect(
+    () => {
+	    console.log('překreslení komponenty')
+    }
+  );
 
-	useEffect(
-		() => {
-			console.log('překreslení komponenty')
-		}
-	)
-
-	return (
-		<div>Zboží - {amount} ks</div>
-	)
-}
+  // ...
+};
 ```
 
 Jako první parametr do `useEffect` předáváme vždy funkci, které se má vykonat. Druhý parametr ovlivňuje, kdy se má efekt spustit.
@@ -37,22 +52,22 @@ Chceme-li, aby se náš efekt spouštěl po **každé aktualizaci komponenty**, 
 
 ```jsx
 useEffect(
-	() => {
-		// spustí se po každé aktualizaci komponenty
-		// včetně úvodního vykreslení
-	}
-)
+  () => {
+    // spustí se po každé aktualizaci komponenty
+    // včetně úvodního vykreslení
+  }
+);
 ```
 
 Když jako druhý parametr uvedeme prázdné pole, spustí se efekt pouze po **prvním vykreslení komponenty**. To nejčastěji používáme např. k úvodnímu načtení dat z API do komponenty, nastartování časovačů, apod.
 
 ```jsx
 useEffect(
-	() => {
-		// spustí se jenom po úvodním vykreslení
-	},
-	[]
-)
+  () => {
+    // spustí se jenom po úvodním vykreslení
+  },
+  []
+);
 ```
 
 Chceme-li, aby se náš kód spustil jako reakce na změnu stavu nebo konkrétních props, uvedeme do pole seznam závislostí (stavové proměnné nebo props). To můžeme použít například ve chvíli, kdy chceme z API načíst vyfiltrovaná data, protože uživatel do hledání začal psát název zboží, apod.
@@ -86,5 +101,5 @@ useEffect(
 		}
 	},
 	[]
-)
+);
 ```
