@@ -8,13 +8,13 @@ Pokud funkce, která se spouští v `useEffect`, vrátí další funkci, tak se 
 useEffect(
   () => {
     // tento kód se spustí jenom po úvodním vykreslení
-		// zde např. nastartujeme časovače, přidáme event listenery,
-		// spustíme načítání dat z API
+    // zde např. nastartujeme časovače, přidáme event listenery,
+    // spustíme načítání dat z API
 
     return () => {
       // tento kód se spustí předtím, než komponenta zanikne
-			// zde zrušíme časovače, odstraníme event listenery,
-			// přerušíme nedokončená volání API, apod.
+      // zde zrušíme časovače, odstraníme event listenery,
+      // přerušíme nedokončená volání API, apod.
     }
   },
   []
@@ -32,17 +32,17 @@ Ukažmě si jednoduchou komponentu, která při svém připojení do stránky na
 ```jsx
 const Metronome = () => {
 
-	useEffect(
-		() => {
-			setInterval(
-				() => { console.log("tik"); },
-				1000
-			);
-		},
-		[]
-	);
+  useEffect(
+    () => {
+      setInterval(
+        () => { console.log("tik"); },
+        1000
+      );
+    },
+    []
+  );
 
-	return <div>Metronom, který tiká v konzoli</div>;
+  return <div>Metronom, který tiká v konzoli</div>;
 }
 ```
 
@@ -54,22 +54,22 @@ Do komponenty potřebujeme přidat i uklízecí funkci, která při odpojení ko
 ```jsx
 const Metronome = () => {
 
-	useEffect(
-		() => {
-			const myTimer = setInterval(
-				() => { console.log("tik"); },
-				1000
-			);
+  useEffect(
+    () => {
+      const myTimer = setInterval(
+        () => { console.log("tik"); },
+        1000
+      );
 
-			// funkce vrácená z useEffect,
-			// se spustí při odpojení komponenty
-			return () => {
-				clearInterval(myTimer)
-			}
-		},
-		[]
-	);
+      // funkce vrácená z useEffect,
+      // se spustí při odpojení komponenty
+      return () => {
+        clearInterval(myTimer)
+      }
+    },
+    []
+  );
 
-	return <div>Metronom, který tiká v konzoli</div>;
+  return <div>Metronom, který tiká v konzoli</div>;
 }
 ```
