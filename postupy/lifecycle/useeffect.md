@@ -55,7 +55,7 @@ useEffect(
   () => {
     // spustí se po každé aktualizaci komponenty
     // včetně úvodního vykreslení
-  }
+  },
 );
 ```
 
@@ -66,7 +66,7 @@ useEffect(
   () => {
     // spustí se jenom po úvodním vykreslení
   },
-  []
+  [],
 );
 ```
 
