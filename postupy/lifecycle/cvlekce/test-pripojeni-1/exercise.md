@@ -15,7 +15,7 @@ V některých webových aplikacích se nám může hodit komponenta informujíc�
    window.addEventListener('offline', handleOffline);
    ```
 1. Na stránce _Test připojení_ otevřete _Developer tools_ → _Network_ a přejděte do offline módu. Komponenta by měla zobrazit patřičnou zprávu.
-   ::fig{src="assets/offline.png"}
+   ::fig{src=assets/offline.png size=50}
 1. Podobným postupem jako výše vytvořte posluchač události `online` a zařiďte, aby se stav komponenty správně aktualizoval, pokud v developer tools přejdeme opět do online módu.
 1. Vyzkoušejte, že vaše řešení správně funguje.
 
