@@ -2,8 +2,8 @@ title: Životní cyklus komponenty
 lead: Rozebereme kdy přesně se komponenta renderuje a proč
 access: claim
 sections:
-  - osnova
   - lifecycle
   - useeffect
+  - cleanup
   - cv-lifecycle
   - uzavery

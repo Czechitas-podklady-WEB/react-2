@@ -4,7 +4,7 @@ Je velmi důležité si uvědomit, že React skutečně spustí celou funkci tvo
 
 ### Plánování překreslení
 
-Pro ilustraci rozšiřme malinko komponentu `ProductItem` tak, že po klinutí na tlačítko jakoby přidáme produkt do košíku, což v tuto chvíli bude znamenat pouze změnu stavu `inCart`. 
+Pro ilustraci rozšiřme malinko komponentu `ProductItem` tak, že po klinutí na tlačítko jakoby přidáme produkt do košíku, což v tuto chvíli bude znamenat pouze změnu stavu `inCart`.
 
 ```jsx
 const ProductItem = ({ name, price, amount }) => {
@@ -26,7 +26,7 @@ const ProductItem = ({ name, price, amount }) => {
 };
 ```
 
-Všimněte si, že ihned po volání funkce `setInCart` vypíšeme do konzole hodnotu stavu. Pokud čekáte, že se do konzole po kliknutí na tlačítko vypíše `true`, budete zklamáni. Ke změně stavu a k překreslení komponenty nedojde totiž okamžitě. React se pokusí najít ten nejlepší moment, aby optimalizoval výkon aplikace na co největší rychlost. Tento moment rozhodně nastane dávno poté co funkce `handleBuy` skončí. Uvnitř jejího těla tedy bude stav mít stále starou hodnotu. 
+Všimněte si, že ihned po volání funkce `setInCart` vypíšeme do konzole hodnotu stavu. Pokud čekáte, že se do konzole po kliknutí na tlačítko vypíše `true`, budete zklamáni. Ke změně stavu a k překreslení komponenty nedojde totiž okamžitě. React se pokusí najít ten nejlepší moment, aby optimalizoval výkon aplikace na co největší rychlost. Tento moment rozhodně nastane dávno poté co funkce `handleBuy` skončí. Uvnitř jejího těla tedy bude stav mít stále starou hodnotu.
 
 ### useEffect
 
@@ -38,7 +38,7 @@ const ProductItem = ({ name, price, amount }) => {
 
   useEffect(
     () => {
-	    console.log('překreslení komponenty')
+      console.log('překreslení komponenty')
     }
   );
 
@@ -74,32 +74,15 @@ Chceme-li, aby se náš kód spustil jako reakce na změnu stavu nebo konkrétn�
 
 ```jsx
 useEffect(
-	() => {
-		// spustí se po změně prop 'amount'
-	},
-	[amount]
+  () => {
+    // spustí se po změně prop 'searchText'
+  },
+  [searchText]
 )
 ```
 
-Pokud je uvnitř komponenty použit `useEffect` vícekrát, spouští se v takové pořadí, v jakém jsou uvedeny v kódu.
+### Pořadí vykonávání useEffect
 
-### Odpojení komponenty
+Pokud je uvnitř komponenty použit `useEffect` vícekrát (např. jeden při mountu komponenty, druhý při každém updatu, apod.), spouští se jednotlivé efekty v takovém pořadí, v jakém jsou uvedeny za sebou v kódu.
 
-Jsou situace, kdy potřebujeme spustit kód ve chvíli, kdy komponenta zaniká. Například potřebujeme odstranit spuštěné časovače, nepotřebné posluchače událostí. Prostě když po sobě komponenta potřebuje uklidit.
-
-Pokud funkce, která se spouští v `useEffect`, vrátí další funkci, tak se tato funkce zavolá těsně před tím, než komponenta zanikne.
-
-```jsx
-useEffect(
-	() => {
-		// tento kód se spustí
-		// jenom po úvodním vykreslení
-
-		return () => {
-			// tento kód se spustí předtím,
-			// než komponenta zanikne
-		}
-	},
-	[]
-);
-```
+Co když ale máme do sebe více vnořených komponent a uvnitř každé z nich použijme `useEffect`? V jakém pořadí se budou vykonávat efekty z dceřiných a rodičovských komponent?

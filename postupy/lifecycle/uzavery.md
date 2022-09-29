@@ -1,8 +1,8 @@
 ## Uzávěry
 
-Na začátek lekce opět zabrousíme do trochy teorie ohledně toho, jak přesně v JavaScriptu fungují proměnné a funkce. Začneme úplně jednoduchou funkcí ve vanilla JavaScriptu a brzy se dostaneme opět k Reactu. 
+Na úvod opět zabrousíme do trochy teorie ohledně toho, jak přesně v JavaScriptu fungují proměnné a funkce. Začneme úplně jednoduchou funkcí ve vanilla JavaScriptu a brzy se dostaneme opět k Reactu.
 
-Představme si nějakou uplně hloupu hru, ve které když pětkrát klikneme na stánku, tak vyčerpáme všechny své životy a zemřeme. 
+Představme si nějakou uplně hloupu hru, ve které když pětkrát klikneme na stránku, tak vyčerpáme všechny své životy a zemřeme.
 
 ```js
 const startGame = () => {
@@ -17,10 +17,12 @@ const startGame = () => {
   };
 
   document.body.addEventListener('click', handleClick);
-}
+};
+
+startGame();
 ```
 
-Když JavaScriptový engine vykonává funkci nebo blok kódu, po celou dobu vykonávání si pamatuje všechny lokální proměnné, které v něm byly vytvořeny. Jakmile vykonávání bloku skončí, všechny takto zapamatované proměnné se z paměti uvolní. 
+Když JavaScriptový engine vykonává funkci nebo blok kódu, po celou dobu vykonávání si pamatuje všechny lokální proměnné, které v něm byly vytvořeny. Jakmile vykonávání bloku skončí, všechny takto zapamatované proměnné se z paměti uvolní.
 
 To je případ proměnné `health` vytvořené ve funkci `startGame`. Tato proměnná by zanikla ve chvíli, kdy funkce `startGame` skončí. Proměnnou `health` však zároveň používá funkce `handleClick`. Tato funkce se však poprvé spustí až ve chvíli, kdy uživatel klikne na stránku. To už ovšem funkce `startGame` dávno, dávno skončila a proměnná `health` by už byla dávno uvolněná z paměti. Funkce `handleClick` by se tak pokusila přistoupit k již neexistující proměnná a náš program by zhavaroval.
 

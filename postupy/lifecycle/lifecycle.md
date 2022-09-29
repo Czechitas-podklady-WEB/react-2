@@ -16,7 +16,7 @@ const ProductItem = ({ name, price, amount }) => {
 };
 ```
 
-Všimněte si, že komponenta `ProductItem` je vlastně obyčejná JavaScriptové funkce. V moderním Reactu se již zcela výhradně používají :term{cs="funkční komponenty" en="function components"}. Každá komponenta je pak obyčejná funkce vracející JSX. Sám React pak funkci volá během jejích životního cyklu a vrácené JSX vykreslí do DOMu prohlížeče.
+Všimněte si, že komponenta `ProductItem` je vlastně obyčejná JavaScriptová funkce. V moderním Reactu se již zcela výhradně používají :term{cs="funkční komponenty" en="function components"}. Každá komponenta je pak obyčejná funkce vracející JSX. Sám React pak funkci volá během jejích životního cyklu a vrácené JSX vykreslí do DOMu prohlížeče.
 
 :term{cs="Životním cyklem" en="lifecycle"} komponenty označujeme fáze, kterými komponenta prochází během své existence v aplikaci. Komponenta během svého životního cyklu projde těmito třemi fázemi:
 
@@ -26,11 +26,11 @@ Všimněte si, že komponenta `ProductItem` je vlastně obyčejná JavaScriptov�
 
 3. **Unmount**, neboli fáze **odpojení** komponenty nastává pouze jednou a to ve chvíli, kdy je komponenta odstraněna z DOMu stránky. V tuto chvíli se funkce komponenty jíž nevolá.
 
-Ve starších verzích Reactu, kdy se komponenty vytvářely výhradně jako javascriptové třídy *(class components)*, měla komponenta přímo metody, které se spouštěly v konkrétních fázích životního cyklu.
+Ve starších verzích Reactu, kdy se komponenty vytvářely výhradně jako javascriptové třídy *(class components)*, měla komponenta přímo metody, které se spouštěly v konkrétních fázích životního cyklu. V moderním Reactu ve funkčních komponentách používáme k tomu samému `useEffect`.
 
 ### Reakce na jednotlivé fáze
 
-Každé překreslení komponenty znamená zavolání její funkce. To můžeme snadno zachytit například pomocí `console.log` přímo v těle. 
+Každé překreslení komponenty znamená zavolání její funkce. To můžeme snadno zachytit například pomocí `console.log` přímo v těle.
 
 ```js
 const ProductItem = ({ name, price, amount }) => {
