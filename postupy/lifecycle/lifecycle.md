@@ -10,6 +10,7 @@ const ProductItem = ({ name, price, amount }) => {
     <div className="product-item">
       <h2>{name}</h2>
       <p>Price: {price}</p>
+      <p>In stock: {amount}</p>
       <button>Add to cart</button>
     </div>
   );

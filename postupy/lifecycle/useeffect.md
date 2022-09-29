@@ -39,7 +39,7 @@ const ProductItem = ({ name, price, amount }) => {
   useEffect(
     () => {
 	    console.log('překreslení komponenty')
-    }
+    },
   );
 
   // ...
@@ -55,7 +55,7 @@ useEffect(
   () => {
     // spustí se po každé aktualizaci komponenty
     // včetně úvodního vykreslení
-  }
+  },
 );
 ```
 
@@ -66,7 +66,7 @@ useEffect(
   () => {
     // spustí se jenom po úvodním vykreslení
   },
-  []
+  [],
 );
 ```
 
@@ -74,11 +74,11 @@ Chceme-li, aby se náš kód spustil jako reakce na změnu stavu nebo konkrétn�
 
 ```jsx
 useEffect(
-	() => {
-		// spustí se po změně prop 'amount'
-	},
-	[amount]
-)
+  () => {
+    // spustí se po změně prop 'amount'
+  },
+  [amount],
+);
 ```
 
 Pokud je uvnitř komponenty použit `useEffect` vícekrát, spouští se v takové pořadí, v jakém jsou uvedeny v kódu.
@@ -91,15 +91,15 @@ Pokud funkce, která se spouští v `useEffect`, vrátí další funkci, tak se 
 
 ```jsx
 useEffect(
-	() => {
-		// tento kód se spustí
-		// jenom po úvodním vykreslení
+  () => {
+    // tento kód se spustí
+    // jenom po úvodním vykreslení
 
-		return () => {
-			// tento kód se spustí předtím,
-			// než komponenta zanikne
-		}
-	},
-	[]
+    return () => {
+      // tento kód se spustí předtím,
+      // než komponenta zanikne
+    }
+  },
+  [],
 );
 ```
