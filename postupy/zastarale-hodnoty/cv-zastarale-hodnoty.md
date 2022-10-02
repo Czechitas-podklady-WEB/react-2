@@ -4,3 +4,4 @@ V následujících cvičeních budeme postupně vyvíjet aplikaci jménem Datluj
 
 ::exc[cvlekce>datluj-1]
 ::exc[cvlekce>datluj-2]
+::exc[cvlekce>datluj-3]
