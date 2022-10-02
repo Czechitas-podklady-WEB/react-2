@@ -4,6 +4,7 @@ lessons:
   - opakovani
   - hodnoty-stav
   - lifecycle
+  - zastarale-hodnoty
   - state-lifting
   - state-management
   - dom-interakce
