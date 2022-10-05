@@ -30,9 +30,7 @@ const Counter = () => {
 
   useEffect(() => {
     document.addEventListener('keyup', handleKeyUp);
-    return (
-      document.removeEventListener('keyup', handleKeyUp);
-    );
+    return () => document.removeEventListener('keyup', handleKeyUp);
   }, []);
 
   const handleClick = () => {
@@ -77,9 +75,7 @@ V tomto případě upravíme `useEffect` tak, že jej učiníme závislý na hod
 ```js
 useEffect(() => {
   document.addEventListener('keyup', handleKeyUp);
-  return (
-    document.removeEventListener('keyup', handleKeyUp);
-  );
+  return () => document.removeEventListener('keyup', handleKeyUp);
 }, [count]);
 ```
 
