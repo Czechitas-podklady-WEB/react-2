@@ -52,7 +52,7 @@ V tomto příkladu je také smysluplnější vyrobit funkci `handleTimer` přím
       setCount((oldCount) => oldCount + 1);
     };
 
-    const timerId = window.setInterval(handleTimer);
+    const timerId = window.setInterval(handleTimer, 1000);
     return () => window.clearInterval(timerId);
   }, []);
 ```
