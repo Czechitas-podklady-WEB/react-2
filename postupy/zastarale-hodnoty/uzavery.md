@@ -18,7 +18,7 @@ const startGame = () => {
     }
   };
 
-  document.body.addEventListener('click', handleClick);
+  document.addEventListener('click', handleClick);
 };
 
 startGame();
