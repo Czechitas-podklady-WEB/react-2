@@ -34,7 +34,7 @@ const Counter = () => {
   }, []);
 
   const handleClick = () => {
-    setState(count + 1);
+    setCount(count + 1);
   };
 
   return (
