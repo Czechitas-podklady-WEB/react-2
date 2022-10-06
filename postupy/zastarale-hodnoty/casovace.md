@@ -3,9 +3,9 @@
 K problémum se zastaralými hodnotami v React dochází vždy, když funkce vytvořené v těle komponenty pužíváme mimo JSX. V takovím případě nemá React nad našimi funckemi kontrolu a nemůže vyměňovat staré funkce za nové. To nastává v případě
 
 1. událostí, které obsluhujeme mimo React jako `document/keyUp`, `window/offline` apod.,
-1. časovačů jako `setTimeout` a `setInterval`. 
+1. časovačů jako `setTimeout` a `setInterval`.
 
-U časovačů je situace jiná, než u událostí, protože za běhu časovače není už možné vyměnit funkci, kterou časovač vykonává. Postup s ruční výměnou funkce nám je tady k ničemu.  
+U časovačů je situace jiná, než u událostí, protože za běhu časovače není už možné vyměnit funkci, kterou časovač vykonává. Postup s ruční výměnou funkce nám je tady k ničemu.
 
 Dejme tomu, že bychom chtěli v naší komponentě `Counter` zvyšovat hodnotu automaticky každou vteřinu. S následujícím postupem bychom pohořeli.
 
@@ -18,7 +18,7 @@ const Counter = () => {
   };
 
   useEffect(() => {
-    const timerId = window.setInterval(handleTimer);
+    const timerId = window.setInterval(handleTimer, 1000);
     return () => window.clearInterval(timerId);
   }, []);
 
@@ -32,7 +32,7 @@ const Counter = () => {
 };
 ```
 
-V časovači už totiž bude naždy použita pouze první verze funkce `handleTimer` vznklá při prvním vykreselní komponenty. V této funkce je navždy uzavřena proměnná `count` s prvotní hodnotou 0. 
+V časovači už totiž bude naždy použita pouze první verze funkce `handleTimer` vznklá při prvním vykreselní komponenty. V této funkce je navždy uzavřena proměnná `count` s prvotní hodnotou 0.
 
 Nebude nám, než využít techniku "vyhnutí se uzávěrům" a napsat časovač takto:
 
@@ -42,7 +42,7 @@ const handleTimer = (e) => {
 };
 ```
 
-V tomto případě proměnnou `count` vůbec nepoužíváme, takže se do naší funkce nauzavře. Díky tomu můžeme tuto funkcí volat opakovaně, i když už je dávno zastaralá. 
+V tomto případě proměnnou `count` vůbec nepoužíváme, takže se do naší funkce nauzavře. Díky tomu můžeme tuto funkcí volat opakovaně, i když už je dávno zastaralá.
 
 V tomto příkladu je také smysluplnější vyrobit funkci `handleTimer` přímo uvnitř `useEffet`. Nepobtřebujeme totiž, aby React zbytečně při každém renderu vytvářel nové a nové verze této funkce, které stejně k ničemu neopužijeme.
 
@@ -51,7 +51,7 @@ V tomto příkladu je také smysluplnější vyrobit funkci `handleTimer` přím
     const handleTimer = (e) => {
       setCount((oldCount) => oldCount + 1);
     };
-    
+
     const timerId = window.setInterval(handleTimer);
     return () => window.clearInterval(timerId);
   }, []);
