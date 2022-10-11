@@ -1,6 +1,6 @@
 ## Motivace
 
-Sdílení dat a komunikace mezi komponentami je jedna z největších výzev v architektuře Reactových aplikací. V praxi velmi často narazíme na situaci, kdy v nějaké komponentě potřebojeme data zevnitř některého z jejích potomků. React však nemá žádný nástroj nebo příkaz, jakým by předek mohl z potomka získat data. Tuto situaci musíme vyřešit pomocí techniky s názvem :em[state lifting]. 
+Sdílení dat a komunikace mezi komponentami je jedna z největších výzev v architektuře Reactových aplikací. V praxi velmi často narazíme na situaci, kdy v nějaké komponentě potřebojeme data zevnitř některého z jejích potomků. React však nemá žádný nástroj nebo příkaz, jakým by předek mohl z potomka získat data. Tuto situaci musíme vyřešit pomocí techniky s názvem :term{cs="povýšení stavu" en="state lifting"}. 
 
 ### Ukázka: Hračkorama
 
