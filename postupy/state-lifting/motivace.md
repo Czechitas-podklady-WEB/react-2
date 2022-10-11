@@ -1,10 +1,16 @@
 ## Motivace
 
-Sdílení dat a komunikace mezi komponentami je jedna z největších výzev v architektuře Reactových aplikací. Důležítá techníka používaná pro sdílení dat je takzvaný :em[state lifting]. Jde o přesunutí stavových dat z komponenty do některého z jejích předků. Díky tomu získají k těmto datům přístup další komponenty ve stromě.
+Sdílení dat a komunikace mezi komponentami je jedna z největších výzev v architektuře Reactových aplikací. V praxi velmi často narazíme na situaci, kdy v nějaké komponentě potřebojeme data zevnitř některého z jejích potomků. React však nemá žádný nástroj nebo příkaz, jakým by předek mohl z potomka získat data. Tuto situaci musíme vyřešit pomocí techniky s názvem :em[state lifting]. 
 
-### Ukázka
+### Ukázka: Hračkorama
 
-Představme si situaci, kdy vytváříme komponentu `EmailInput`, která umí ověřit validitu zadávaného e-mailu. Taková komponenta může vypadat například takto:
+K ilustraci výše popsané situace použijeme project e-shopu :i[Hračkorama]. Základ projektu najdete v [tomto repozitáři](https://github.com/Czechitas-podklady-WEB/hrackorama-kosik).
+
+V tuto chvíli nás bude zajímat hlavně komponenta `Amount`. 
+
+
+
+<!-- Představme si situaci, kdy vytváříme komponentu `EmailInput`, která umí ověřit validitu zadávaného e-mailu. Taková komponenta může vypadat například takto:
 
 ```js
 const EmailInput = () => {
@@ -88,4 +94,4 @@ const EmailInput = ({ value, onChange }) => {
     </div>
   )
 };
-```
+``` -->
