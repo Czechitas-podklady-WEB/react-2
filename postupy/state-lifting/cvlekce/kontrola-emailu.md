@@ -28,13 +28,13 @@ const EmailInput = () => {
 
 Všimněte si, že jde o uncontrolled componentu, která spravuje svůj vlastní stav. Budeme chtít tento stav povýšit a udělat z `EmailInput` controlled componentu.
 
-1. Založte si nový React projekt. V komponentě `App` vytvořte jednoduchý formulář s komponentou `EmailInput` tlačítkem submit. Vyzkoušejte, že komponenta `EmailInput` validuje zadaný e-mail.
-1. Pozorujte, že pokud bychom chtěli formulář odeslat, nemáme se z komponenty `App` jak dostat k uživatelem zadanému e-mailu uzavřenému (jako stav) uvnitř komponenty `EmailInput`.
-1. Povyšte stav komponenty `EmailInput` na úroveň komponenty `App`. Budeme potřebovat znát nejen samotný e-mail, ale také to, zda je validní. Hodnota stavu tedy bude objekt s touto strukturou:
+1. Založte si nový React projekt. Vytvořte komponentu `OrderForm`, ve které bude jednoduchý formulář s komponentou `EmailInput` a tlačítkem submit. Zapojte komponentu do aplikace a vyzkoušejte, že `EmailInput` správně validuje zadaný e-mail.
+1. Pozorujte, že pokud bychom chtěli formulář odeslat, nemáme se z komponenty `OrderForm` jak dostat k uživatelem zadanému e-mailu uzavřenému (jako stav) uvnitř komponenty `EmailInput`.
+1. Povyšte stav komponenty `EmailInput` na úroveň komponenty `OrderForm`. Budeme potřebovat znát nejen samotný e-mail, ale také to, zda je validní. Hodnota stavu tedy bude objekt s touto strukturou:
    ```js
    {
      value: 'pokusnik.kokosnik@gmai.com',
      valid: true,
    }
    ```
-1. Tento stav předáme do konponenty `EmailInput` pomocí prop s názvem `email`. Komponenta `EmailInput` navíc bude očekávat callback prop `onChange`, která bude komponentě `App` posílat všechny změny zevnitř `EmailInput`.
+1. Tento stav předáme do konponenty `EmailInput` pomocí prop s názvem `email`. Komponenta `EmailInput` navíc bude očekávat callback prop `onChange`, která bude komponentě `OrderForm` posílat všechny změny zevnitř `EmailInput`.
