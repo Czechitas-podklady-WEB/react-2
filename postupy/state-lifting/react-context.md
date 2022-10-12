@@ -1,0 +1,3 @@
+## React context
+
+Ve složitějších aplikacích budeme narážet na situace, kdy potřebujeme povýšit stav opravdu vysoko, někdy až do kořene samotné aplikace. Pokud je strom komponent hluboký, snadno se nám stane, že budeme vysoce povýšený stav předávat pomocí props skrze mnoho úrovmí. Této sitauci se v React terminologii říká :em[props drilling]. Pokud je situace už neúnosná, můžeme místo props drillingu použít React context. 

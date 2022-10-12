@@ -4,4 +4,4 @@ access: claim
 sections:
   - motivace
   - cv-lifting
-  
+  - react-context
