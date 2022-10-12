@@ -12,27 +12,6 @@ V tuto chvíli nás bude zajímat hlavně komponenta `Amount`.
 
 <!-- Představme si situaci, kdy vytváříme komponentu `EmailInput`, která umí ověřit validitu zadávaného e-mailu. Taková komponenta může vypadat například takto:
 
-```js
-const EmailInput = () => {
-  const [email, setEmail] = useState('');
-  
-  return (
-    <div className="validated-input">
-      <input 
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      { 
-        email.includes('@') 
-        ? null 
-        : <div className="invalid-msg">Invalid email address</div>
-      }
-    </div>
-  )
-};
-```
-
 Můžeme ji pak použít v nějakém formuláři naší aplikace:
 
 ```js
