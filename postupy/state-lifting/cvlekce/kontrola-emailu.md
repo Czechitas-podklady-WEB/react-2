@@ -33,7 +33,7 @@ Všimněte si, že jde o *uncontrolled* komponentu, která spravuje svůj vlastn
 1. Povyšte stav komponenty `EmailInput` na úroveň komponenty `OrderForm`. Budeme potřebovat znát nejen samotný e-mail, ale také to, zda je validní. Hodnota stavu tedy bude objekt s touto strukturou:
    ```js
    {
-     value: 'pokusnik.kokosnik@gmai.com',
+     value: 'pokusnik.kokosnik@example.com',
      valid: true,
    }
    ```
