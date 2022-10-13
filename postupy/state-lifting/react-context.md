@@ -1,3 +1,5 @@
 ## React context
 
-Ve složitějších aplikacích budeme narážet na situace, kdy potřebujeme povýšit stav opravdu vysoko, někdy až do kořene samotné aplikace. Pokud je strom komponent hluboký, snadno se nám stane, že budeme vysoce povýšený stav předávat pomocí props skrze mnoho úrovmí. Této sitauci se v React terminologii říká :em[props drilling]. Pokud je situace už neúnosná, můžeme místo props drillingu použít React context. 
+Ve složitějších aplikacích potkáme situace, kdy potřebujeme povýšit stav opravdu vysoko, někdy až do kořene samotné aplikace. Pokud je strom komponent hluboký, snadno se nám stane, že budeme vysoce povýšený stav předávat pomocí props skrze mnoho úrovmí. Této sitauci se v React terminologii říká :term{cs="vrtání props" en="props drilling"}. Pokud je situace už neúnosná, můžeme se props drillingu vyhnout použitím React contextu. 
+
+Pomocí React contextu můžeme zařídit, že nějaká část naší aplikace má přistup k určitým hodnotám bez nutnosti předávat je pomocí props. Typickým příkladem je napříkad informace o přihlášeném uživateli. Mnoho komponent ma různých místech v aplikaci může potřebovat informaci o tom, zde je přihlášený nějaký uživatel. Provrtávat props o uživateli do všech těchto komponent by byla ohromná a nevděčná práce.

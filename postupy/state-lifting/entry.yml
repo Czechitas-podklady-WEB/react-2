@@ -2,7 +2,8 @@ title: State lifting
 lead: Naučíme se techniku přesouvání stavu nahoru ve stromě komponent
 access: claim
 sections:
-  - motivace
+  - state-lifting
+  - controlled
   - cv-lifting
   - react-context
   - cv-context
