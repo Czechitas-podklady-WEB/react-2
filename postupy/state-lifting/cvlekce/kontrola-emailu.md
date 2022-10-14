@@ -3,7 +3,9 @@ title: Kontrola emailu
 demand: 3
 ---
 
-V tomto cvičení budeme pracovat s komponentou `EmailInput`, která jednoduchým způsobem validuje zadaný e-mail. Kód komponenty:
+Vytvořte jednoduchý formulář obsahující políčko pro zadání e-mailu. Políčko by mělo ověřovat, že jde o validní e-mailovu adresu. Při odeslání formuláře data zatím pouze vypíšeme do konzole. 
+
+Komponentu `EmailInput`, která jednoduchým způsobem validuje zadaný e-mail, máme předepsanou.
 
 ```jsx
 const EmailInput = () => {
