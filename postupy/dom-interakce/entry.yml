@@ -1,5 +1,6 @@
 title: Interakce s DOMem
-lead: Zjistíme jak se v Reactu dá dostat k DOMu a kdy se to hodí
+lead: Ukážeme si jak se v Reactu dá přistupovat k DOMu a v jakým případech to je užitečné
 access: claim
 sections:
-  - osnova
+  - pristup-dom
+  # - useref
