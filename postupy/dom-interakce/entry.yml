@@ -4,3 +4,4 @@ access: claim
 sections:
   - pristup-dom
   # - useref
+  - cv-dom
