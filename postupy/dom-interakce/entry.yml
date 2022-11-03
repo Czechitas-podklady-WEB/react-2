@@ -3,5 +3,5 @@ lead: Ukážeme si jak se v Reactu dá přistupovat k DOMu a v jakým případec
 access: claim
 sections:
   - pristup-dom
-  # - useref
+  - useref
   - cv-dom
