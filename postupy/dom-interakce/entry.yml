@@ -4,4 +4,5 @@ access: claim
 sections:
   - pristup-dom
   - useref
+  - prehravac
   - cv-dom
