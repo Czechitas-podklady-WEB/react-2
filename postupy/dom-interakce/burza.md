@@ -19,3 +19,21 @@ const startGenerator = (callback) => {
 };
 ```
 
+Poté komponentu, která zobrazuje průběh kurzu nějaké měny.
+
+```js
+const ExchangeRate = ({ currency, rate }) => {
+  const prevRate = useRef();
+  
+  useEffect(() => {
+    prevRate.current = rate;
+  }, [rate]);
+  
+  return (
+    <div>
+      Průběžný kurz {currency}: {rate}
+      {prevRate.current < rate ? ' ⇑' : ' ⇓'}
+    </div>
+  )
+};
+```
