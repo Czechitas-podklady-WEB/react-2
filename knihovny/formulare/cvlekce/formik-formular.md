@@ -19,6 +19,7 @@ demand: 3
    * Ostatní
      - **preferované odběrné místo** - výběr z alespoň 5 českých měst (select)
      - **odběr newsletteru** - dva radiobuttony, ano/ne
+     - **poznámka** - textarea pro libovolný komentář, nepovinné pole, max. 100 znaků
    * Souhlas
 	   - **souhlas se zpracováním osobních údajů** - checkbox, musí být zaškrtnutý, jinak nelze uživatele zaregistrovat
 1. Nastavte pole tak, aby se pro všechna pole správně provedla validace.
