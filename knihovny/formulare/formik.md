@@ -21,37 +21,37 @@ Naše komponenta bude vypadat takto:
 import { useFormik } from 'formik';
 
 const Form = () => {
-	const formik = useFormik(
-		initialValues: {
-			firstName: 'Jana',
-			lastName: 'Novotná'
-		},
-		onSubmit: (formData) => {
-			console.log(formData);
-		}
-	);
+  const formik = useFormik(
+    initialValues: {
+      firstName: 'Jana',
+      lastName: 'Novotná'
+    },
+    onSubmit: (formData) => {
+      console.log(formData);
+    }
+  );
 
-	return (
-		<form onSubmit={formik.handleSubmit}>
-			<label htmlFor="firstName">Jméno</label>
-			<input
-				type="text"
-				id="firstName"
-				name="firstName"
-				value={formik.values.firstName}
-				onChange={formik.handleChange}
-			/>
-			<label htmlFor="lastname">Příjmení</label>
-			<input
-				type="text"
-				id="lastName"
-				name="lastName"
-				value={formik.values.lastName}
-				onChange={formik.handleChange}
-			/>
-			<button type="submit">Odeslat</button>
-		</form>
-	);
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <label htmlFor="firstName">Jméno</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        value={formik.values.firstName}
+        onChange={formik.handleChange}
+      />
+      <label htmlFor="lastname">Příjmení</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        value={formik.values.lastName}
+        onChange={formik.handleChange}
+      />
+      <button type="submit">Odeslat</button>
+    </form>
+  );
 }
 ```
 
@@ -68,21 +68,21 @@ Je-li formulářový prvek nevalidní, vytvoříme v objektu vlastnost se jméne
 
 ```jsx
 const validate = (values) => {
-	const errors = {};
+  const errors = {};
 
-	if (!values.firstName) {
-		errors.firstName = 'Povinné pole';
-	} else if (values.firstName.length > 15) {
-		errors.firstName = 'Musí být dlouhé maximálně 15 znaků';
-	}
+  if (!values.firstName) {
+    errors.firstName = 'Povinné pole';
+  } else if (values.firstName.length > 15) {
+    errors.firstName = 'Musí být dlouhé maximálně 15 znaků';
+  }
 
-	if (!values.lastName) {
-		errors.lastName = 'Povinné pole';
-	} else if (values.lastName.length > 20) {
-		errors.lastName = 'Musí být dlouhé maximálně 20 znaků';
-	}
+  if (!values.lastName) {
+    errors.lastName = 'Povinné pole';
+  } else if (values.lastName.length > 20) {
+    errors.lastName = 'Musí být dlouhé maximálně 20 znaků';
+  }
 
-	return errors;
+  return errors;
 };
 ```
 
@@ -92,42 +92,42 @@ Naše komponenta bude vypadat následovně:
 
 ```jsx
 const Form = () => {
-	const formik = useFormik(
-		initialValues: {
-			firstName: 'Jana',
-			lastName: 'Novotná'
-		},
-		validate: validate,
-		onSubmit: (formData) => {
-			console.log(formData);
-		}
-	);
+  const formik = useFormik(
+    initialValues: {
+      firstName: 'Jana',
+      lastName: 'Novotná'
+    },
+    validate: validate,
+    onSubmit: (formData) => {
+      console.log(formData);
+    }
+  );
 
-	return (
-		<form onSubmit={formik.handleSubmit}>
-			<label htmlFor="firstName">Jméno</label>
-			<input
-				type="text"
-				id="firstName"
-				name="firstName"
-				value={formik.values.firstName}
-				onChange={formik.handleChange}
-			/>
-			{ formik.errors.firstName ? <p>{formik.errors.firstName}</p> : null }
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <label htmlFor="firstName">Jméno</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        value={formik.values.firstName}
+        onChange={formik.handleChange}
+      />
+      { formik.errors.firstName ? <p>{formik.errors.firstName}</p> : null }
 
-			<label htmlFor="lastname">Příjmení</label>
-			<input
-				type="text"
-				id="lastName"
-				name="lastName"
-				value={formik.values.lastName}
-				onChange={formik.handleChange}
-			/>
-			{ formik.errors.firstName ? <p>{formik.errors.firstName}</p> : null }
+      <label htmlFor="lastname">Příjmení</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        value={formik.values.lastName}
+        onChange={formik.handleChange}
+      />
+      { formik.errors.firstName ? <p>{formik.errors.firstName}</p> : null }
 
-			<button type="submit">Odeslat</button>
-		</form>
-	);
+      <button type="submit">Odeslat</button>
+    </form>
+  );
 }
 ```
 
@@ -139,12 +139,12 @@ Aby vše fungovalo správně, musíme na každý prvek přidat ještě událost 
 
 ```jsx
 <input
-	type="text"
-	id="firstName"
-	name="firstName"
-	value={formik.values.firstName}
-	onChange={formik.handleChange}
-	onBlur={formik.handleBlur}
+  type="text"
+  id="firstName"
+  name="firstName"
+  value={formik.values.firstName}
+  onChange={formik.handleChange}
+  onBlur={formik.handleBlur}
 />
 ```
 

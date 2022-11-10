@@ -14,22 +14,22 @@ Hlavní komponenta `Formik` zcela nahrazuje použití hooku `useFormik`. Použí
 
 ```jsx
 const Form = () => {
-	return (
-		<Formik
-			initialValues={{
-				firstName: 'Jana',
-				lastName: 'Novotná'
-			}}
-			validate={validate}
-			onSubmit={(values, {setSubmitting}) => {
-				console.log(values);
-				setSubmitting(false);
-			}}
-		>
+  return (
+    <Formik
+      initialValues={{
+        firstName: 'Jana',
+        lastName: 'Novotná'
+      }}
+      validate={validate}
+      onSubmit={(values, {setSubmitting}) => {
+        console.log(values);
+        setSubmitting(false);
+      }}
+    >
 
 
-		</Formik>
-	);
+    </Formik>
+  );
 }
 ```
 
@@ -37,15 +37,15 @@ Další komponenty pak použijeme uvnitř `<Formik>...</Formik>` pro snadné vyt
 
 ```jsx
 <Form>
-	<label htmlFor="firstName">First Name</label>
-	<Field name="firstName" type="text" />
-	<ErrorMessage name="firstName" />
+  <label htmlFor="firstName">First Name</label>
+  <Field name="firstName" type="text" />
+  <ErrorMessage name="firstName" />
 
-	<label htmlFor="lastName">Last Name</label>
-	<Field name="lastName" type="text" />
-	<ErrorMessage name="lastName" />
+  <label htmlFor="lastName">Last Name</label>
+  <Field name="lastName" type="text" />
+  <ErrorMessage name="lastName" />
 
-	<button type="submit">Submit</button>
+  <button type="submit">Submit</button>
 </Form>
 ```
 
@@ -57,9 +57,9 @@ Komponenta `<Field>` automaticky vytváří HTML prvek `<input>` příslušného
 
 ```jsx
 <Field name="city" as="select">
-	<option value="Praha">Praha</option>
-	<option value="Brno">Brno</option>
-	<option value="Ostrava">Ostrava</option>
+  <option value="Praha">Praha</option>
+  <option value="Brno">Brno</option>
+  <option value="Ostrava">Ostrava</option>
 </Field>
 
 <Field name="comment" as="textarea" />
