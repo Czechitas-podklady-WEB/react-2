@@ -1,9 +1,4 @@
 title: Práce s knihovnami
 lead: Představní běžně používaných knihoven pro framework React
 lessons:
-  - react-query
-  - styled-components
   - formulare
-  - ui-knihovny
-  - eslint
-  - projekt
