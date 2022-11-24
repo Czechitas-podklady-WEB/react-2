@@ -15,4 +15,4 @@ demand: 3
 1. Box bud standardně zavřený a bude se zobrazovat pouze záhlaví s titulkem a šipkou ukazující doprava. Kliknutím na záhlaví se šipka změní na šipku ukazující dolů a v boxu se zobrazí obsah. Opětovným kliknutím na záhlaví se box zase zavře.
 1. Jako šipku lze použít např. symbol **›** tvořený HTML entitou `&rsaquo;`.
 
-::fig[ukázka výsledku]{src=assets/rozbalovaci-box.png size=80}
+::fig[ukázka výsledku]{src=../assets/rozbalovaci-box.png size=80}
