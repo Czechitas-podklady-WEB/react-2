@@ -1,4 +1,4 @@
-## Skládání komponent, children prop
+## Skládání komponent
 
 React je založený na práci s komponentami. Komponenty jdou do sebe vnořovat a díky tomu mohou být naše komponenty malé funkční celky, ze kterých skládáme větší díly celé naší aplikace. My jsme doposud vždy věděli, jakou konkrétní komponentu chceme použít uvnitř jiné komponenty a mohli jsme ji proto jednoduše naimportovat a v rodičovské komponentě použít.
 
