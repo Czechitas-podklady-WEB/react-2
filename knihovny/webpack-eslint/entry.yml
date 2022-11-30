@@ -5,5 +5,8 @@ sections:
   - webpack
   - asset-moduly
   - dev-server
+  - cv-zaklady
   - loadery
-  
+  - pluginy
+  - cache-busting
+  - babel-react
