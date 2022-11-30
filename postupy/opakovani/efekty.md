@@ -19,6 +19,8 @@ const App = () => {
 };
 ```
 
+## Nazdar
+
 Funkce useEffect má dva parametry. Prvním je funkce, která se má zavolat a druhý parametr říká, za jakých okolností se má naše funkce volat.
 
 - Když druhý parametr chybí, funkce se spustí při každém překreslení komponenty.

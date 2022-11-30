@@ -1,0 +1,9 @@
+title: Webpack a ESLint
+lead: Hlouběji se seznámíme s nastavením Webpacku a lintováním kódu
+access: claim
+sections:
+  - webpack
+  - asset-moduly
+  - dev-server
+  - loadery
+  
