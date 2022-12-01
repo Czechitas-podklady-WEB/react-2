@@ -10,8 +10,20 @@ Musíme také do našeho projektu nainstalovat balíček *eslint*.
 npm install -D eslint
 ```
 
-Podobně jako Webpack i ESLint má svůj konfigurační soubor. Ten se jmenuje `.eslintrc.js`. 
+Podobně jako Webpack i ESLint má svůj konfigurační soubor. Ten se jmenuje `.eslintrc.js` a v základní verzi může vypadat například takto:
 
+
+```js
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  parserOptions: {
+    sourceType: 'module',
+  },
+}
+```
 
 VS Code Settings:
 
