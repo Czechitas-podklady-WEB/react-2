@@ -78,6 +78,18 @@ Výraz `/\.png$/` tedy znamená "všechny soubory, které končí příponou `.p
 
 Kdybychom chtělí například všechny JPG a JPEG soubory, napíšeme `/\.jpe?g$/`. Když budeme chtít JPG i PNG a třeba ještě SVG soubory, napíšeme `/\.(png|jpe?g|svg)$/`. Tímto teste tak zpracujeme všechny nejběžnější soubory s obrázky.
 
+Musíme pak ale upravit vygenerovaný soubor, aby měl správnou příponu.
+
+```js
+{
+  test: /\.(png|jpe?g|svg)$/,
+  type: 'asset/resource',
+  generator: {
+    filename: 'img/[name].[ext]'
+  },
+},
+```
+
 ### HTML soubory
 
 Html soubory můžeme zpracovávat také jako asset moduly. Stačí přidat další pravidlo.
@@ -87,7 +99,7 @@ Html soubory můžeme zpracovávat také jako asset moduly. Stačí přidat dal�
   test: /\.html$/,
   type: 'asset/resource',
   generator: {
-    filename: '[name].html'
+    filename: '[name].[ext]'
   },
 },
 ```
@@ -115,8 +127,5 @@ Opět jej musím importovat v hlavním `index.js`, jinak jej Webpack nezpracuje.
 ```js
 import './index.html';
 ```
+
 Po sestavení projektu už máme dobrý základ webové aplikace s JavaScriptem. Abychom aplikaci spustili, budeme potřebovat server. 
-
-### Regulární výrazy v modulech
-
-V konfiguraci modulů vždy ří
