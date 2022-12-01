@@ -12,7 +12,7 @@ Zkusíme si od základu vyrobit jednoduchý *Webpack* projekt.
    Zvlášť zákeřný učeň s ďolíčky běží podél zóny úlů
    ```
 1. Nainstalujte do projektu *Webpack* a *DevServer*.
-1. V `package.json` vytvořte spouštěcí skript pro příkaz `serve`.
+1. V `package.json` vytvořte spouštěcí skript pro příkaz `start`.
 1. Vytvořte zcela základní konfiguraci pro *Webpack*, která pouze zpracuje hlavní soubor `src/index.js` a vyrobí výsledný soubor s názvem `app.js`.
 1. Přidejte do konfigurace asset modul pro soubory HTML. Vytvořte soubor `index.html`, který vkládá správný JavaScript. Importujte váš soubor `index.html`, aby jej Webpack vložil do cílové složky.
 1. Nakonfigurujte `DevServer` tak, aby explicitně vytvářel složku `dist`.
