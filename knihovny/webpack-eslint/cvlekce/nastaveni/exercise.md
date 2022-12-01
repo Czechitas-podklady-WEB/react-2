@@ -17,7 +17,7 @@ Zkusíme si od základu vyrobit jednoduchý *Webpack* projekt.
 1. Přidejte do konfigurace asset modul pro soubory HTML. Vytvořte soubor `index.html`, který vkládá správný JavaScript. Importujte váš soubor `index.html`, aby jej Webpack vložil do cílové složky.
 1. Nakonfigurujte `DevServer` tak, aby explicitně vytvářel složku `dist`.
 1. Spusťte váš NPM skript a vyzkoušejte, že vaše aplikace funguje.
-1. Přidejte do vaší konfigurace další asset modul pro zpracování souborů s příponou `.ico`. Tyto soubory nechť *Webpack* vloží do složky `dist/images`.
+1. Přidejte do vaší konfigurace další asset modul pro zpracování souborů s příponou `.ico`. Tyto soubory nechť Webpack vloží do složky `dist/images`.
 1. Do hlavičky souboru `index.html` nastavte cestu k faviconě
    ```html
    <link rel="icon" type="image/x-icon" href="/images/rocket.ico" />

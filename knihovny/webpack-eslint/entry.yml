@@ -3,7 +3,7 @@ lead: Hlouběji se seznámíme s nastavením Webpacku a lintováním kódu
 access: claim
 sections:
   - webpack
-  - asset-moduly
+  - moduly
   - dev-server
   - cv-zaklady
   - loadery
