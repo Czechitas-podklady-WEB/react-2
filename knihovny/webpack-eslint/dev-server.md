@@ -9,13 +9,13 @@ npm install -D webpack-dev-server
 Poté do `package.json` přidáme skript:
 
 ```
-"serve": "webpack serve --mode=development"
+"start": "webpack serve --mode=development"
 ```
 
 Pak už můžeme naši aplikaci spustit pomocí
 
 ```
-npm run serve
+npm run start
 ```
 
 V základu *DevServer* nevyžaduje žádnou konfiguraci. Můžeme však chtít nastavit například následující věci.

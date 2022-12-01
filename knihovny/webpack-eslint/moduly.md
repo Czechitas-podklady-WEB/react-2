@@ -85,7 +85,7 @@ Musíme pak ale upravit vygenerovaný soubor, aby měl správnou příponu.
   test: /\.(png|jpe?g|svg)$/,
   type: 'asset/resource',
   generator: {
-    filename: 'img/[name].[ext]'
+    filename: 'img/[name][ext]'
   },
 },
 ```
@@ -99,7 +99,7 @@ Html soubory můžeme zpracovávat také jako asset moduly. Stačí přidat dal�
   test: /\.html$/,
   type: 'asset/resource',
   generator: {
-    filename: '[name].[ext]'
+    filename: '[name][ext]'
   },
 },
 ```

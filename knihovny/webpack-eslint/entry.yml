@@ -9,4 +9,4 @@ sections:
   - loadery
   - rozbiti-kese
   - pluginy
-  - babel-react
+  - eslint

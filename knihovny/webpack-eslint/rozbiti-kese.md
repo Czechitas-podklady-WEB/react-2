@@ -18,9 +18,18 @@ Webpack pro účely rozbití keše umožňuje k názvu vygenerovaného souboru p
 
 Platí, že stejná data, například soubor na disku, mají vždy stejný otisk. Naopak různá data mají otisk (až na vyjímky) různý. 
 
-Ve Webpacku připojíme digitální otisk k názvu souboru pomocí `[contenthash]`. Napříkla pro obrázky:
+Ve Webpacku připojíme digitální otisk k názvu souboru pomocí `[contenthash]`. Například pro náš hlavní `bundle.js`:
 
 ```js
-filename: 'img/[name]-[contenthash].[ext]'
+filename: 'bundle-[contenthash].js'
 ```
 
+Můžeme si pak vyzkoušet, že když změníme obsah souboru, změní se i jeho název.
+
+Rozbití keše je také důležité pro obrázky:
+
+```js
+filename: 'img/[name]-[contenthash][ext]'
+```
+
+Tím, že jsme ale rozbili keš u souboru `bundle.js` nám však přestane fungovat `index.html`. To vyřešíme v následující sekci.
