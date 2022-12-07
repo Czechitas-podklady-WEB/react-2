@@ -47,11 +47,3 @@ module.exports = {
 - Hodnota `sourceType: 'module'` říká, že chceme používat `import/export` místo vkládání JavaScriptu pomocí `<script>` tagů.
 
 ESLint má dobrou [dokumentaci](https://eslint.org/docs/latest/user-guide/configuring/), které se dočtete podrobnosti ke každému jednotlivému nastavení.
-
-
-
-Odkazy:
-
-- [Seznam ESLint pravidel](https://eslint.org/docs/latest/rules/)
-- [eslint:recommended](https://github.com/eslint/eslint/blob/main/conf/eslint-recommended.js)
-
