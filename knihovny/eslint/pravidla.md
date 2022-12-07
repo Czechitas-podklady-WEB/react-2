@@ -104,3 +104,42 @@ rules: {
 ```
 
 Vyladit takto precizní nastavení je však práce, ze které hrozí velká újma na psychické pohodě a pro slabší jedince i vážné zdravotní problémy. Existují proto určité doporučené sady pravidel, kterým se říká :term{cs="stylistické příručky" en="style guides"}.
+
+Základní doporučená nastavení obsahuje konfigurace `eslint:recommended`, která je přímo součástí `ESLintu`, můžete ji použít takto:
+
+```js
+extends: 'eslint:recommended'
+```
+
+Tato pravidla jsou však jen velmi základní a většinou potřebujeme mnohem detailnější nastavaní. V praxi se nejvíce používají následující 3 stylistické příručky. Každá prosazuje určité styly formátování.
+
+- [Standard](https://standardjs.com) - je mimo jiné proti používání středníků,
+- [AirBnB](https://github.com/airbnb/javascript) - nejpřísnější ze všech tří:
+  - vyžaduje středníky,
+  - vyžaduje mezery kolem složených závorek u objektů,
+  - vyžaduje `default export`, pokud exportujeme pouze jednu hodnotu,
+- [Google](https://google.github.io/styleguide/jsguide.html) - méně přísná než AirBnB, také vyžaduje středníky.
+
+Všechny tyto příručky se shodnou na následujicím:
+
+1. odsazení pomocí dvou mezer,
+1. jednoduché uvozovky místo dvojitých,
+1. otvírací složená závorka bloku není na novém řádku,
+1. nepoužívat `var`, vždy `const` nebo `let`,
+1. žádné bílé znaky na konci řádků.
+
+Detailnější srovnání všech příruček najdete například v [tomto článku](https://betterprogramming.pub/comparing-the-top-three-style-guides-and-setting-them-up-with-eslint-98ea0d2fc5b7).
+
+### AirBnB style guide
+
+Ve všech JavaScroptových kurzech na těchto stránkách používáme příručku od AirBnB. Abychom ji mouhli použít ve svých projektech, musíme nainstalovat balíček [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+
+```js
+npm install -D eslint-config-airbnb
+```
+
+Stačí pak do `.eslintrc.js` vložit
+
+```js
+extends: 'airbnb'
+```
