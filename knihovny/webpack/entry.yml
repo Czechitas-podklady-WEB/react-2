@@ -1,5 +1,5 @@
-title: Webpack a ESLint
-lead: Hlouběji se seznámíme s nastavením Webpacku a lintováním kódu
+title: Konfigurace Webpacku
+lead: Hlouběji se seznámíme s nastavením Webpacku pro různé situace
 access: claim
 sections:
   - webpack
@@ -10,4 +10,3 @@ sections:
   - rozbiti-kese
   - pluginy
   - cv-pluginy
-  - eslint

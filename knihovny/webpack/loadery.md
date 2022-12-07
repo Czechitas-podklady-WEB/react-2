@@ -22,12 +22,12 @@ Pro import CSS souborů pak vytvoříme tuto konfiguraci uvnitř `rules`.
 Abychom naše nastavení otestovali, vytvoříme si soubor `style.css`. 
 
 ```css
-.h1 {
+h1 {
   color: blue;
 }
 
 .smiley-face {
-  background-color: url(smiley.png);
+  background-image: url(smiley.png);
 }
 ```
 

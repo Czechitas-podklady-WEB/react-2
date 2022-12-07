@@ -1,0 +1,6 @@
+title: ESLint
+lead: Představíme si nástroj pro automatickou kontrolu kvality kódu
+access: claim
+sections:
+  - linter
+  - pravidla
