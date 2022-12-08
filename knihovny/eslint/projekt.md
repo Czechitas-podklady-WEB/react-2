@@ -1,3 +1,3 @@
 ## Projekt na procvičení
 
-::exc[cvlekce>formik-formular]
+::exc[cvlekce>cvrlikani]
