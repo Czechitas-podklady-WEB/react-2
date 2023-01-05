@@ -26,8 +26,8 @@ V souboru `webpack.config.js` máme pravděpodobně něco takového:
 
 ```js
 {
-	test: /\.css$/,
-	use: ['style-loader', 'css-loader'],
+  test: /\.css$/,
+  use: ['style-loader', 'css-loader'],
 },
 ```
 
@@ -35,17 +35,17 @@ Abychom zapnuli podporu pro CSS moduly, upravíme konfiguraci následovně:
 
 ```js
 {
-	test: /\.css$/,
-	use: [
-		'style-loader',
-		{
-			loader: 'css-loader',
-			options: {
-				modules: true,
-				importLoaders: 1,
-			}
-		}
-	]
+  test: /\.css$/,
+  use: [
+    'style-loader',
+    {
+      loader: 'css-loader',
+      options: {
+        modules: true,
+        importLoaders: 1,
+      }
+    }
+  ]
 },
 ```
 
@@ -55,15 +55,15 @@ Představme si, že CSS pro na3i komponentu vypadá třeba takto.
 
 ```css
 .message {
-	margin: 1em 0;
-	padding: 1em;
-	background-color: silver;
-	border: 2px solid black;
-	border-radius: 4px;
+  margin: 1em 0;
+  padding: 1em;
+  background-color: silver;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 
 .title {
-	color: grey;
+  color: grey;
 }
 ```
 
@@ -80,12 +80,12 @@ import React from 'react';
 import styles from './message.css';
 
 const Message = () => {
-	return (
-		<div className={styles.message}>
-			<h2 className={styles.title}>Message title</h2>
-			<p>A very interesting message content.</p>
-		</div>
-	)
+  return (
+    <div className={styles.message}>
+      <h2 className={styles.title}>Message title</h2>
+      <p>A very interesting message content.</p>
+    </div>
+  )
 }
 
 export default Message;
@@ -105,27 +105,27 @@ Při práci s CSS moduly je princip jiný. Předpokládá se, že třída, ktero
 
 ```css
 .common {
-	margin: 1em 0;
-	padding: 1em;
-	background-color: silver;
-	border: 2px solid black;
-	border-radius: 4px;
+  margin: 1em 0;
+  padding: 1em;
+  background-color: silver;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 
 .error {
-	composes: common;
-	border-color: red;
-	background-color: #ffdddd;
+  composes: common;
+  border-color: red;
+  background-color: #ffdddd;
 }
 
 .info {
-	composes: common;
-	border-color: blue;
-	background-color: #ddddff;
+  composes: common;
+  border-color: blue;
+  background-color: #ddddff;
 }
 
 .title {
-	color: grey;
+  color: grey;
 }
 ```
 
@@ -133,12 +133,12 @@ My pak v Reactu neaplikujeme na prvek více tříd, ale použijeme jen tu jednu 
 
 ```jsx
 const Message = () => {
-	return (
-		<div className={styles.error}>
-			<h2 className={styles.title}>Message title</h2>
-			<p>A very interesting message content.</p>
-		</div>
-	)
+  return (
+    <div className={styles.error}>
+      <h2 className={styles.title}>Message title</h2>
+      <p>A very interesting message content.</p>
+    </div>
+  )
 }
 ```
 
