@@ -16,7 +16,7 @@ import styled from 'styled-components';
 A potom:
 
 ```jsx
-const Title = styles.h1`
+const Title = styled.h1`
  padding: 20px;
  background-color: #222;
  text-align: center;
