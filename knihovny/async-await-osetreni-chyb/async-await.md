@@ -1,5 +1,5 @@
 ## async/await
-V novějších verzích JavaScriptu existují dvě nová klíčová slova: `async` a `await`. Nepřinášejí novou funkcionalitu, je to pouze **syntaktic sugar** pro `Promise`.
+V novějších verzích JavaScriptu existují dvě nová klíčová slova: `async` a `await`. Nepřinášejí novou funkcionalitu, je to pouze **syntactic sugar** pro `Promise`.
 
 ## Volání API bez ošetření chyb
 
