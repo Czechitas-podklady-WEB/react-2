@@ -1,4 +1,4 @@
-# Ošetření chybových stavů API
+## Ošetření chybových stavů API
 
 ```jsx
 function App() {
