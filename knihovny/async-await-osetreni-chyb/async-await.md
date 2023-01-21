@@ -164,7 +164,7 @@ const nacistData = async () => {
 Připomeňme, že funkce `then()` (a také `catch()`) nejsou specifické pro `fetch`. Funkce `fetch` vrací objekt typu `Promise`, funkce `then()` a `catch()` jsou metodami právě objektu `Promise`. Objekt `Promise` mohou vracet i jiné funkce – např. funkce pro načtení souboru z disku nebo funkce pro export obrázku z `canvasu`. Používáte se v moderních API všude tam, kde nějaká operace může trvat delší dobu a nechceme, aby její volání zablokovalo prohlížeč. Použít `async/await` můžeme ve všech případech, kdy máme k dipozici objekt `Promise`, ne jen spolu s fukcí `fetch`.
 
 
-## Bonus: Paralelní zpracování požadavků pomocí `Promise.all()`
+## Bonus: Paralelní zpracování více požadavků
 Klíčová slova `async/await` umožňují psát kód, který se lépe čte. Důležité je ale uvědomovat si, co se pod tímto kódem skrývá a že ve skutečnosti si to prohlížeč sám převede na volání funkce `then()`. Existují však případy, kdy `await` nechceme použít a budeme potřebovat pracovat přío s `Promise` objekty. Je to v situacích, když chceme pracovat s více `Promise` objekty najednou.
 
 Pokud bychom chtěli poslat dva nezávislé požadavky na server a udělali bychom to pomocí následujícího kódu, bude se nejprve čekat na dokončení prvního požadavku a teprve pak se pošle druhý požadavek. Představme si, že nechceme hodit jednou kostkou, ale chceme hodit dvěma kostkami najednou – a abychom je lépe rozlišili, jedno bude klasická šstiboká kostka, druhé bude dvanáctistěn.
@@ -196,5 +196,6 @@ const data6 = await resp6.json();
 const data12 = await resp12.json();
 setKostka1(data6.randomNumber);
 setKostka2(data12.randomNumber);
+```
 
 `Promise` má i další [statické metody](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods), které umožňují pracovat s více `Promise` dalšími způsoby – např. počkat na první splněnou `Promise` (např. pokud pošlete požadavky na předpověď počasí na několik různých serverů a zobrazíte první odpověď, která dorazí).
