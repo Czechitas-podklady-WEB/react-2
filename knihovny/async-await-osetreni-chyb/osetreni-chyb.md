@@ -105,7 +105,10 @@ Pro ošetření fatálních chyb slouží funkce `catch()`, kterou můžete zavo
           case 200:
             return resp.json();
           case 500:
-            alert("Server vrátil chybu.");
+            alert("Server vrátil neočekávanou chybu.");
+            break;
+          case 503:
+            alert("Server je přetížen.");
             break;
         }
       })
