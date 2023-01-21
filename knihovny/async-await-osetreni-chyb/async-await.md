@@ -74,7 +74,7 @@ const nacistData = async () => {
 
 Kód se v tomto případě provádí jednoduše shora dolů, lépe se v něm proto orientuje. Všimněte si, že tentokrát nemusíme ošetřovat případ, že `data` neexistují – část kódu pro zpracování dat je pouze ve větvi ošetřující případ, kdy server vrátil `200 OK` – můžeme očekávat, že v takovém případě nám server data poslal.
 
-## Použití try-catch
+## Použití try-catch pro ošetření fatálních chyb
 Ošetření serverových chyb ve funkci používající `await` už máme vyřešené. Zbývá ošetřit chyby komunikace (např. nedostupný internet), který jsme v předchozí části lekce ošetřovali ve funkci `catch()`. Pro ošetření takovýchto chyb v případě použití `await` potřebujeme použít `try-catch` blok. To je další z konstrukcí JavaScriptu, se kterou jsme se ještě nesetkali. Tato konstrukce se používá pro ošetření chyb, které mohou nastat v kódu. Dá se jí ošetřit třeba i pokus o čtení properties z `undefined` (i když je to málokdy potřeba) a podobné chyby. Celá konstruke vypadá tak, že kód, ve kterém může dojít k chybě, se uzavře do bloku `try { … }`. Za ním pak následuje blok `catch { … }`, který se provede v případě, kdy v bloku `try { … }` dojde k chybě. V takovém případě se provádění v bloku `try { … }` na řádku s chybou ukončí, zbytek bloku `try` se přeskočí a skočí se rovnou do bloku `catch`.
 
 Následující kód z předchozí lekce:
