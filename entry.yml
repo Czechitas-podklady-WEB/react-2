@@ -1,6 +1,17 @@
 title: React 2
 lead: Navazující kurz Reactu pro všechny, kteřá už znají základy
-image: intro-image.svg
-chapters:
-  - postupy
-  - knihovny
+image: assets/react.svg
+lessons:
+  - opakovani
+  - hodnoty-stav
+  - lifecycle
+  - zastarale-hodnoty
+  - state-lifting
+  - state-management
+  - dom-interakce
+  - formulare
+  - ui-knihovny
+  - webpack
+  - eslint
+  - styled-components
+  - async-await-osetreni-chyb
