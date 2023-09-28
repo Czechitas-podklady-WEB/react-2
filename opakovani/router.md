@@ -15,7 +15,31 @@ Nyní máme v aplikaci k dispozici množství komponent, se kterými můžeme pr
 ```jsx
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Link,
+  Outlet,
+} from "react-router-dom";
+
+// konfigurace routeru
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: 'about',
+        element: <About />,
+      },
+      {
+        path: 'Contact',
+        element: <Contact />,
+      },
+    ]
+  },
+]);
+
 
 function About() {
   return (
@@ -49,14 +73,7 @@ const App = () => (
 );
 
 createRoot(document.querySelector('#app')).render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="abour" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
+  <RouterProvider router={router} />
 );
 ```
 

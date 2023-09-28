@@ -4,12 +4,12 @@ React je framework/knihovna pro tvorbu uinteraktivních živatelských rozhraní
 
 ### Založení nového projektu
 
-V praxi je standardem pro zakládání nových projektů v Reactu **create-react-app** nebo má každá firma či vývojář vytvořené vlastní workflow, jak nový projekt založit a co je jeho součástí. Protože **create-react-app** se snaží býct výchozím a univerzálním startovním bodem pro obrovské množství různých projektů, obsahuje velké množství balíčků, které zabírají hodně místa a založení nového projektu může i dlouho trvat.
+V praxi je standardem pro zakládání nových projektů v Reactu **create-react-app** (i když dnes už to přestává platit) nebo má každá firma či vývojář vytvořené vlastní workflow, jak nový projekt založit a co je jeho součástí. Protože **create-react-app** se snaží býct výchozím a univerzálním startovním bodem pro obrovské množství různých projektů, obsahuje velké množství balíčků, které zabírají hodně místa a založení nového projektu může i dlouho trvat.
 
-Pro účely našeho kurzu je to kanón na vrabce. Pro příklady a úkoly v rámci kurzu nám stačí jen pár množstí nezbytně nutných balíčků. Vytvořili jsem vlastní **create-czechitas-app**, pomocí kterého budeme nové projekty vytvářet. Na příkazové řádce použijeme:
+Pro účely našeho kurzu je to kanón na vrabce. Pro příklady a úkoly v rámci kurzu nám stačí jen pár množstí nezbytně nutných balíčků. Vytvořili jsem vlastní **kodim-app**, pomocí kterého budeme nové projekty vytvářet. Na příkazové řádce použijeme:
 
 ```sh
-npx create-czechitas-app muj-projekt
+npm init kodim-app@latest muj-projekt
 ```
 
 Vytvoří se složka `muj-projekt`, kam se nainstalují potřebné balíčky, nastaví se Webpack a vytvoří se základní kostra vzorového projektu, kterou si můžeme dále upravovat.
