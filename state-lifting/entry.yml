@@ -5,6 +5,3 @@ sections:
   - state-lifting
   - controlled
   - cv-lifting
-  - react-context
-  - sdileni-stavu
-  - cv-context

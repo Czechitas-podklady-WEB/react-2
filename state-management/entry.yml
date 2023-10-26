@@ -1,5 +1,9 @@
 title: Správa stavu
-lead: Ukážeme si knihovny pro pokročilou správu stavu
+lead: React Context a knihovny pro pokročilou práci se stavem
 access: claim
 sections:
-  - cv-context-opakovani
+  - react-context
+  - sdileni-stavu
+  - cv-context
+  - cv-context-pokracovani
+  - knihovny
