@@ -3,7 +3,7 @@ title: Registrační formulář
 demand: 3
 ---
 
-1. Začněte s čistým projektem vytvořeným pomocí `create-czechitas-app`.
+1. Začněte s čistým projektem vytvořeným pomocí `npm init kodim-app@latest nazev-projektu`.
 1. Do projektu nainstalujte knihovnu Formik.
 1. Vytvořte komponentu, která bude obsahovat registrační formulář do e-shopu. Formulář bude obsahovat:
    * Registrační údaje

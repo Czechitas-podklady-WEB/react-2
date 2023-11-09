@@ -3,7 +3,7 @@ title: Rozbalovací box
 demand: 3
 ---
 
-1. Začněte s čistým projektem vytvořeným pomocí `create-czechitas-app`.
+1. Začněte s čistým projektem vytvořeným pomocí `npm init kodim-app@latest nazev-projektu`.
 1. Vytvořte komponentu CollapseBox, která bude mít prop `title`, ve kterém bude titulek komponenty. Jakýkoliv obsah komponenty se zobrazí uvnitř boxu.
 1. Komponenta by měla jít použít následujícím způsobem:
    ```jsx
