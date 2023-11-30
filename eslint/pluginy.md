@@ -42,5 +42,5 @@ module.exports = {
 Toto je už hodně instalování a nastavování. Nástroj `create-czechitas-app` má proto speciální generátor zvaný `react-eslint`, který vytváří Reactový projekt s už nakonfigurovaným ESLintem. Pro vytvoření nového projektu tak stačí napsat
 
 ```
-npx create-czechitas-app myapp react-eslint
+npm init kodim-app@latest myapp react-eslint
 ```
