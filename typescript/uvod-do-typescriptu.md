@@ -36,37 +36,37 @@ Proč se Typescript používá:
 
 ## Základní datové typy
 
-**number**
-Reprezentuje čísla, včetně celých čísel a desetinných čísel.
+**number:**
+reprezentuje čísla, včetně celých čísel a desetinných čísel.
 
 ```js
 let count: number = 42;
 ```
 
-**string**
-Reprezentuje textové řetězce.
+**string:**
+reprezentuje textové řetězce.
 
 ```js
 let message: string = "Hello, TypeScript!";
 ```
 
-**boolean**
-Reprezentuje logické hodnoty true nebo false.
+**boolean:**
+reprezentuje logické hodnoty true nebo false.
 
 ```js
 let isLogged: boolean = true;
 ```
 
-**null a undefined**
-Null a undefined jsou hodnoty, které reprezentují neexistující nebo neznámé hodnoty.
+**null a undefined:**
+null a undefined jsou hodnoty, které reprezentují neexistující nebo neznámé hodnoty.
 
 ```js
 let data: null = null;
 let value: undefined = undefined;
 ```
 
-**object**
-Reprezentuje jakýkoliv objekt.
+**object:**
+reprezentuje jakýkoliv objekt.
 
 ```js
 let user: object = {
@@ -75,23 +75,23 @@ let user: object = {
 };
 ```
 
-**Array**
-Reprezentuje pole hodnot určitého typu.
+**Array:**
+reprezentuje pole hodnot určitého typu.
 
 ```js
 let numbers: number[] = [1, 2, 3, 4];
 let fruits: Array<string> = ["apple", "banana", "orange"];
 ```
 
-**Tuple**
-Reprezentuje pole s pevně daným pořadím a typy prvků.
+**Tuple:**
+reprezentuje pole s pevně daným pořadím a typy prvků.
 
 ```js
 let person: [string, number] = ["John", 25];
 ```
 
-**enum**
-Reprezentuje výčtový typ, což je soubor pojmenovaných hodnot.
+**enum:**
+reprezentuje výčtový typ, což je soubor pojmenovaných hodnot.
 
 ```js
 enum Color {
@@ -103,15 +103,15 @@ enum Color {
 let selectedColor: Color = Color.Green;
 ```
 
-**any**
-Typ any umožňuje proměnným nabývat hodnot jakéhokoliv typu. Používejte s opatrností, protože ztrácíte typovou kontrolu.
+**any:**
+typ any umožňuje proměnným nabývat hodnot jakéhokoliv typu. Používejte s opatrností, protože ztrácíte typovou kontrolu.
 
 ```js
 let dynamicValue: any = "This can be anything.";
 ```
 
-**void**
-Reprezentuje absenci hodnoty. Používá se obvykle pro funkce, které nic nevracejí.
+**void:**
+reprezentuje absenci hodnoty. Používá se obvykle pro funkce, které nic nevracejí.
 
 ```js
 const logMessage = (): void => {
