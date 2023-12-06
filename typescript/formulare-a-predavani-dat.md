@@ -2,7 +2,7 @@
 
 V naší aplikaci budeme chtít aby si uživatel nechal vygenerovat vhodnou volnočasovou aktivitu na základě jeho preferencí. Pro začátek nám bude stačit, když ho necháme vybrat si, o jaký typ aktivity by měl zájem. A aby jsme mohli tuto informaci získat, musíme si na to vytvořit formulář, který bude uživatel vyplňovat.
 
-Vytvoříme si novou složku `form`, kde si v `index.tsx` vytvoříme komponentu `Form`, která bude vracet jsx ve formátu:
+Vytvoříme si novou složku `Form`, kde si v `index.tsx` vytvoříme komponentu `Form`, která bude vracet jsx ve formátu:
 
 ```js
 <form onSubmit={() => {}}>
@@ -106,13 +106,10 @@ interface FormDataStructure {
 }
 
 export const Form: React.FC<FormProps> = ({ onSubmitForm }) => {
-  const [formData, setFormData] =
-    useState <
-    FormDataStructure >
-    {
+  const [formData, setFormData] = useState<FormDataStructure>({
       name: "",
       type: "",
-    };
+  })
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
