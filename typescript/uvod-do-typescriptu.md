@@ -83,26 +83,6 @@ let numbers: number[] = [1, 2, 3, 4];
 let fruits: Array<string> = ["apple", "banana", "orange"];
 ```
 
-**Tuple:**
-reprezentuje pole s pevně daným pořadím a typy prvků.
-
-```js
-let person: [string, number] = ["John", 25];
-```
-
-**enum:**
-reprezentuje výčtový typ, což je soubor pojmenovaných hodnot.
-
-```js
-enum Color {
-  Red,
-  Green,
-  Blue,
-}
-
-let selectedColor: Color = Color.Green;
-```
-
 **any:**
 typ any umožňuje proměnným nabývat hodnot jakéhokoliv typu. Používejte s opatrností, protože ztrácíte typovou kontrolu.
 
@@ -116,5 +96,25 @@ reprezentuje absenci hodnoty. Používá se obvykle pro funkce, které nic nevra
 ```js
 const logMessage = (): void => {
   console.log("This is a log message.");
+};
+```
+
+**Promise<T>:**
+reprezentuje hodnotu, která bude k dispozici v budoucnosti, obvykle po dokončení asynchronní operace. Nejčastěji se používá při načítání dat z API. <T> představuje typ dat nebo datovou strukturu, kterou funkce vrací.
+```js
+const myAsynFunction = async (url: string): Promise<T> => {
+  const { data } = await fetch(url);
+  return data;
+};
+```
+
+### Interface
+
+Interface, případně se můžete setkat s českým označením rozhraní, slouží k definování struktury dat objektů, kdy se prostřednictvím interface určí jména a datové typy jejich vlastností. Používá se při definici props v komponentách a nebo při definování návratových hodnot funkcí.
+
+```js
+interface Person {
+  name: string;
+  age: number;
 };
 ```
