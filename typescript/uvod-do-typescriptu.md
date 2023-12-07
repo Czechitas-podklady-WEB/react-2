@@ -100,7 +100,7 @@ const logMessage = (): void => {
 ```
 
 **Promise<T>:**
-reprezentuje hodnotu, která bude k dispozici v budoucnosti, obvykle po dokončení asynchronní operace. Nejčastěji se používá při načítání dat z API. <T> představuje typ dat nebo datovou strukturu, kterou funkce vrací.
+reprezentuje hodnotu, která bude k dispozici v budoucnosti, obvykle po dokončení asynchronní operace. Nejčastěji se používá při načítání dat z API. `<T>` představuje typ dat nebo datovou strukturu, kterou funkce vrací.
 ```js
 const myAsynFunction = async (url: string): Promise<T> => {
   const { data } = await fetch(url);
