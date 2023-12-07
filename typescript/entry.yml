@@ -3,7 +3,7 @@ lead: Co je to Typescript a jak ho v Reactu používat
 access: claim
 sections:
  - uvod-do-typescriptu
- - typesctipt-v-reactu
+ - typescript-v-reactu
  - komponenty-a-props
  - formulare-a-predavani-dat
  - api
