@@ -15,7 +15,6 @@ export const Activity = () => (
     <h3>Name of the Activity: </h3>
     <p>Type: </p>
     <p>Participants: </p>
-    <p>Accessibility: </p>
     <p>Price: </p>
   </div>
 );
