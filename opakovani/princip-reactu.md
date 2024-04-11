@@ -1,6 +1,6 @@
 ## Princip fungování Reactu a založení nového projektu
 
-React je framework/knihovna pro tvorbu uinteraktivních živatelských rozhraní deklarativním způsobem. Jako vývojáři v Reactu vytváříme komponenty, ze kterých skládáme celou aplikaci. Komponenty jsou uzavřené a samostatné a starají se o svůj vlastní stav. React pak zajišťuje efektivní vykreslování celé aplikace a aktualizaci jednotlivých komponent, když dojde ke změně dat uvnitř aplikace.
+React je framework/knihovna pro tvorbu interaktivních živatelských rozhraní deklarativním způsobem. Jako vývojáři v Reactu vytváříme komponenty, ze kterých skládáme celou aplikaci. Komponenty jsou uzavřené a samostatné a starají se o svůj vlastní stav. React pak zajišťuje efektivní vykreslování celé aplikace a aktualizaci jednotlivých komponent, když dojde ke změně dat uvnitř aplikace.
 
 ### Založení nového projektu
 
