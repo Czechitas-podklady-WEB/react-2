@@ -4,15 +4,31 @@ React je framework/knihovna pro tvorbu uinteraktivních živatelských rozhraní
 
 ### Založení nového projektu
 
-V praxi je standardem pro zakládání nových projektů v Reactu **create-react-app** (i když dnes už to přestává platit) nebo má každá firma či vývojář vytvořené vlastní workflow, jak nový projekt založit a co je jeho součástí. Protože **create-react-app** se snaží býct výchozím a univerzálním startovním bodem pro obrovské množství různých projektů, obsahuje velké množství balíčků, které zabírají hodně místa a založení nového projektu může i dlouho trvat.
+V praxi byl dlouho standardem pro zakládání nových projektů v Reactu **create-react-app**, ale dnes už to přestává platit. Již existují modernější a vhodnější nástroje. Často má každá firma či vývojář vytvořené vlastní workflow, jak nový projekt založit a co je jeho součástí. Protože **create-react-app** se snažil být výchozím a univerzálním startovním bodem pro obrovské množství různých projektů, obsahuje velké množství balíčků, které zabírají hodně místa a založení nového projektu může i dlouho trvat.
 
-Pro účely našeho kurzu je to kanón na vrabce. Pro příklady a úkoly v rámci kurzu nám stačí jen pár množstí nezbytně nutných balíčků. Vytvořili jsem vlastní **kodim-app**, pomocí kterého budeme nové projekty vytvářet. Na příkazové řádce použijeme:
+Pro příklady a úkoly v rámci kurzu nám stačí jen pár množstí nezbytně nutných balíčků. V předchozím kurzu React 1 (nebo v DA: Web) jsme vytvářeli projekty pomocí našeho vlastního **kodim-app**. Mimo kurzy Czechitas se ale v praxi s **kodim-app** nepotkáme, takže v Kurzu React 2 budeme používat nástroj **Vite**, který pro zákládání projektů dnes doporučují i sami autoři Reactu.
+
+**kodim-app** z Reactu 1 je interně na **Vite** založený, takže se budete cítit jako doma a možná rozdíl ani nepoznáte.
+
+Projekty budeme základat na příkazové řádce pomocí příkazu:
 
 ```sh
-npm init kodim-app@latest muj-projekt
+npm create vite@latest muj-projekt
 ```
 
-Vytvoří se složka `muj-projekt`, kam se nainstalují potřebné balíčky, nastaví se Webpack a vytvoří se základní kostra vzorového projektu, kterou si můžeme dále upravovat.
+Objeví se menu, kde vybereme, že chceme vytvořit projekt v **Reactu** a že ho budeme psát v **JavaScriptu**. Později v kurzu budeme vybírat **TypeScript**, až se ho naučíme.
+
+Vytvoří se složka `muj-projekt` s nakonfigurovaným projektem. Musíme ale ještě spustit instalaci balíčků. Přejdeme na příkazové řádky do složky projektu a spustíme **npm install**.
+
+```sh
+cd muj-projekt
+npm install
+```
+
+Když pak budeme chtít projekt spustit, použijeme příkaz:
+```sh
+npm run dev
+```
 
 Kód naší aplikace se nachází ve složce `src`. Výchozím bodem projektu je soubor `index.jsx`.
 
@@ -28,17 +44,17 @@ const obsah = <h1 className="title">Titulek stránky</h1>;
 
 ### Základ aplikace v Reactu
 
-Abychom mohli JSX obsah vložit na stránku, musíme v kódu založit React aplikaci. To se dělá pomocí funkce `createRoot`, kterou naimportujeme z balíčku `react-dom/client`. Do funkce `createRoot` předáme DOM element, do kterého se buda naše aplikace v Reactu vykreslovat. To obvykle bývá prázdný `div` element s `id` nastaveným na `app`.
+Abychom mohli JSX obsah vložit na stránku, musíme v kódu založit React aplikaci. To se dělá pomocí metody `createRoot` objektu `ReactDOM`, který naimportujeme z balíčku `react-dom/client`. Do funkce `createRoot` předáme DOM element, do kterého se buda naše aplikace v Reactu vykreslovat. To obvykle bývá prázdný `div` element s `id` nastaveným na `root`.
 
 Funkce vrátí objekt, na kterém zavoláme metodu `render` a předáme do ní JSX obsah naší aplikace, který se má vykreslit na stránku.
 
 Minimální podoba React aplikace pak může vypadat například takto.
 
 ```jsx
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-const appRoot = createRoot(document.querySelector('#app'));
+const appRoot = ReactDOM.createRoot(document.geElementById('root'));
 appRoot.render(<h1 className="title">Moje stránka</h1>);
 ```
 
@@ -48,8 +64,8 @@ Metoda `render` jako parametr akceptuje pouze jeden JSX element. Pokud bychom ch
 
 ```jsx
 appRoot.render(
-	<h1 className="title">Moje stránka</h1>
-	<p>Textový obsah stránky</p>
+  <h1 className="title">Moje stránka</h1>
+  <p>Textový obsah stránky</p>
 );
 ```
 
@@ -59,9 +75,9 @@ React nabízí speciální element, kterému říká *fragment*. Vypadá jako pr
 
 ```jsx
 appRoot.render(
-	<>
-		<h1 className="title">Moje stránka</h1>
-		<p>Textový obsah stránky</p>
-	</>
+  <>
+    <h1 className="title">Moje stránka</h1>
+    <p>Textový obsah stránky</p>
+  </>
 );
 ```

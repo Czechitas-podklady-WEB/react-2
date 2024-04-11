@@ -6,32 +6,35 @@ Komponenta v Reactu je funkce, která na svém výstupu vrací JSX. Toto JSX se 
 
 ```jsx
 const App = () => {
-	return (
-		<>
-			<h1 className="title">Moje stránka</h1>
-			<p>Textový obsah stránky</p>
-		</>
-	);
+  return (
+    <>
+      <h1 className="title">Moje stránka</h1>
+      <p>Textový obsah stránky</p>
+    </>
+  );
 };
 ```
 
 Název funkce, která tvoří komponentu, **musí začínat velkým písmenem**. Takto vytvořenou komponentu pak můžeme používat jako běžnou HTML značku.
 
 ```jsx
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
 
 const App = () => {
-	return (
-		<>
-			<h1 className="title">Moje stránka</h1>
-			<p>Textový obsah stránky</p>
-		</>
-	);
+  return (
+    <>
+      <h1 className="title">Moje stránka</h1>
+      <p>Textový obsah stránky</p>
+    </>
+  );
 };
 
-createRoot(document.querySelector('#app')).render(
-	<App />
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 );
 ```
 
@@ -42,8 +45,9 @@ Komponenty jsou mnohem užitečnější, když do nich můžeme předat data, se
 V místě, kde komponentu používáme, přidáme props jako atributy HTML značky. Do komponenty se props dostanou jako jeden objekt, kde každá prop je jedna vlastnost tohoto objektu. Pro jednodušší používání props uvnitř komponenty můžeme objekt destrukturovat do proměnných.
 
 ```jsx
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
 
 const ShoppingItem = (props) => {
   const { name, amount } = props;
@@ -57,20 +61,23 @@ const ShoppingItem = (props) => {
 };
 
 const App = () => {
-	return (
-		<>
-		  <header>
-      	<h1>Nákupní seznam</h1>
-    	</header>
-    	<main className="shopping-list">
-      	<ShoppingItem name="Mléko" amount="1 l" />
-      	<ShoppingItem name="Máslo" amount="250 g" />
-      	<ShoppingItem name="Rohlíky" amount="8 ks" />
-    	</main>
+  return (
+    <>
+      <header>
+        <h1>Nákupní seznam</h1>
+      </header>
+      <main className="shopping-list">
+        <ShoppingItem name="Mléko" amount="1 l" />
+        <ShoppingItem name="Máslo" amount="250 g" />
+        <ShoppingItem name="Rohlíky" amount="8 ks" />
+      </main>
     </>
-	);
+  );
 };
 
-createRoot(document.querySelector('#app')).render(
-	<App />
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 );
+```

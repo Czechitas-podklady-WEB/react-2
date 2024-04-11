@@ -13,8 +13,8 @@ npm install react-router-dom
 Nyní máme v aplikaci k dispozici množství komponent, se kterými můžeme pracovat. Nejprve je musíme v aplikaci naimportovat, jako každou jinou komponentu.
 
 ```jsx
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -45,7 +45,7 @@ function About() {
   return (
     <>
       <h2>About</h2>
-			<p>Lorem ipsum...</p>
+      <p>Lorem ipsum...</p>
     </>
   );
 }
@@ -54,7 +54,7 @@ function Contact() {
   return (
     <>
       <h2>Contact</h2>
-			<p>Lorem ipsum...</p>
+      <p>Lorem ipsum...</p>
     </>
   );
 }
@@ -66,14 +66,16 @@ const App = () => (
       <Link to="/about">About</Link> |{' '}
       <Link to="/contact">Contact</Link>
     </nav>
-		<main>
-    	<Outlet />
-		</main>
+    <main>
+      <Outlet />
+    </main>
   </div>
 );
 
-createRoot(document.querySelector('#app')).render(
-  <RouterProvider router={router} />
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
 );
 ```
 

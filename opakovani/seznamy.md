@@ -25,9 +25,9 @@ Pro vypisování seznamů dat uložených v poli můžeme použít metodu `map` 
 
 ```jsx
 const User = ({ login }) => {
-	return (
-		<div className="user__login">{login}</div>
-	);
+  return (
+    <div className="user__login">{login}</div>
+  );
 }
 
 const names = ['petr', 'jana', 'marek', 'eva', 'lenka', 'ondra'];
@@ -37,8 +37,8 @@ const App = () => (
   <>
     <h1>Uživatelé</h1>
     <main className="users">
-			{userlements}
-		</main>
+      {userlements}
+    </main>
   </>
 );
 ```

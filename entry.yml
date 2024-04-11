@@ -3,6 +3,7 @@ lead: Navazující kurz Reactu pro všechny, kteří už znají základy
 image: assets/react.svg
 lessons:
   - opakovani
+  - typescript
   - hodnoty-stav
   - lifecycle
   - zastarale-hodnoty
@@ -13,5 +14,3 @@ lessons:
   - ui-knihovny
   - webpack
   - eslint
-  - async-await-osetreni-chyb
-  - typescript
