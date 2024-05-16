@@ -12,14 +12,16 @@ Nejprve z cvičných důvodů povýšíme stav do kompnenty `CartItem`. To sice 
 
 Stav `count` nyní bude v komponentě `CartItem`.
 
-```jsx
-const CartItem = ({ product }) => {
-  const [count, setCount] = useState(product.amount);
+```tsx
+interface ICartItemProps {
+  product: IProduct;
+}
 
+const CartItem: React.FC<ICartItemProps> = ({ product }) => {
   return (
     <div className="cart-item">
       <CartProduct name={product.name} price={product.price} />
-      <Amount value={count} />
+      <Amount value={product.amount} />
     </div>
   )
 };
@@ -27,9 +29,9 @@ const CartItem = ({ product }) => {
 
 Stav pak předáme pomocí prop `value` do komponenty `Amount`. Nyní potřebujeme, aby komponenta `Amount` dala vědět o změně své hodnoty.
 
-```jsx
-const CartItem = ({ product }) => {
-  const [count, setCount] = useState(product.amount);
+```tsx
+const CartItem: React.FC<ICartItemProps> = ({ product }) => {
+  const [count, setCount] = useState<number>(product.amount);
 
   const handleAmountChange = (newCount) => {
     setCount(newCount);
@@ -46,23 +48,28 @@ const CartItem = ({ product }) => {
 
 Komponenta `Amount` pak bude vypadat takto:
 
-```jsx
-const Amount = ({ value, onChange }) => {
-  const handleIncrement = () => {
+```tsx
+interface IAmountProps {
+  value: number;
+  onChange: (newCount: number) => void;
+}
+
+const Amount: React.FC<IAmountProps> = ({ value, onChange }) => {
+  const handelIncrement = () => {
     onChange(value + 1);
   }
 
-  const handleDecrement = () => {
-    if (value > 0) {
+  const handelDecrement = () => {
+    if (count > 0) {
       onChange(value - 1);
     }
   }
 
   return (
     <div className="amount">
-      <button className="amount__btn" onClick={handleDecrement}>–</button>
+      <button className="amount__btn" onClick={handelDecrement}>–</button>
       <div className="amount__count">{value}</div>
-      <button className="amount__btn" onClick={handleIncrement}>+</button>
+      <button className="amount__btn" onClick={handelIncrement}>+</button>
     </div>
   );
 };
