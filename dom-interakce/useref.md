@@ -2,9 +2,9 @@
 
 Pro ilustraci uvažme komponentu, která po kliknutí na tlačíko *zaplatit* zobrazí políčko pro zadání čísla karty.
 
-```jsx
+```tsx
 const Payment = () => {
-  const [cardIinputVisible, setCardIinputVisible] = useState(false);
+  const [cardIinputVisible, setCardIinputVisible] = useState<boolean>(false);
 
   const handlePay = () => setCardIinputVisible(true);
 
@@ -21,45 +21,47 @@ Při zobrazení políčka do něj chceme ihned přesunout focus. K tomu ale pot�
 
 Díky hooku `useRef` můžeme získat přístup k libovolnému elementu vyrobenému pomocí JSX. Nejdříve na začátku komonenty založeníme takzvanou *ref*. 
 
-```js
-const cardInputRef = useRef();
+```ts
+const cardInputRef = useRef<HTMLInputElement>(null);
 ```
 
 React nám do proměnné `cardInputRef` vloží speciální objekt, který předáme pomocí *prop* z názvem `ref` našemu inputu v JSX.
 
-```jsx
+```tsx
 <input type="text" ref={cardInputRef} /> : null}
 ```
       
 Objekt v proměnné `cardInputRef` má jedinou vlastnost vlastnost `current`. Pokud prvek, kterému jsme naši *ref* nastavili na stránce není, vlastnost `current` má hodnotu `undefined`. Jakmile se prvek na stránce objeví, ve vlastnosti `current` máme uložený aktuální DOM element tohoto prvku. Můžeme pak napsat efekt, ve kterém na tento prvek přeneseme focus.
 
 ```js
-useEffect(() => {
-  if (cardIinputVisible) {
-    cardInputRef.current.focus();
-  }
-}, [cardIinputVisible]);
+  useEffect(() => {
+    if (cardIinputVisible && document.activeElement !== cardInputRef.current) {
+      cardInputRef.current.focus();
+    }
+  }, [cardIinputVisible]);
 ```
 
 Celá komponenta pak bude vypadat takto:
 
-```jsx
-const Payment = () => {
-  const [cardIinputVisible, setCardIinputVisible] = useState(false);
-  const cardInputRef = useRef();
+```tsx
+const Payment : React.FC = () => {
+  const [cardIinputVisible, setCardIinputVisible] = useState<boolean>(false);
+  const cardInputRef = useRef<HTMLInputElement>(null!);
 
   useEffect(() => {
     if (cardIinputVisible && document.activeElement !== cardInputRef.current) {
       cardInputRef.current.focus();
     }
   }, [cardIinputVisible]);
+  
+
 
   const handlePay = () => setCardIinputVisible(true);
 
   return (
     <div className="payment">
       <button onClick={handlePay}>Zaplatit</button>
-      {cardIinputVisible ? <input ref={cardInputRef} type="text" /> : null}
+      {cardIinputVisible ? <input type="text" ref={cardInputRef}/> : null}
     </div>
   );
 };

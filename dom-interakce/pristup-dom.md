@@ -16,11 +16,13 @@ Ve zbytku lekce rozebereme, v jakých případech tyto způsoby používáme.
 
 Tuto možnost používáme hlavně v situacích, kdy propojujeme hodnotu nějakého `input` prvku se stavem.
 
-```jsx
-const EmailInput = ({ initialValue }) => {
-  const [email, setEmail] = useState(initialValue);
+```tsx
+import { useState } from "react";
 
-  const handleEmailChange = (e) => {
+const EmailInput = ({ initialValue }: {initialValue: string}) => {
+  const [email, setEmail] = useState<string>(initialValue);
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   }
 
@@ -28,6 +30,8 @@ const EmailInput = ({ initialValue }) => {
     <input type="email" value={email} onChange={handleEmailChange} />
   );
 };
+
+export default EmailInput;
 ```
 
 Toto je zcela standardní způsob a nehrozí nám žádné potíže, neboť při vyvolání události máme v `event.target` vždy aktuální DOM element, na kterém událost vznikla.

@@ -6,8 +6,8 @@ Pro ilustraci vyrobíme komponentu, která bude zobrazovat kurz eura vůči Čes
 
 Nejdříve vyrobíme funkci, která simuluje změny kurzu. 
 
-```js
-const startGenerator = (callback) => {
+```ts
+const startGenerator = (callback: (n: number) => void) => {
   setInterval(() => {
     let rate = 25;
     for (let i = 0; i < 100; i++) {
@@ -21,12 +21,19 @@ const startGenerator = (callback) => {
 
 Poté komponentu, která zobrazuje průběh kurzu nějaké měny.
 
-```js
-const ExchangeRate = ({ currency, rate }) => {
-  const prevRate = useRef();
+```tsx
+interface ExchangeRateProps {
+  currency: string;
+  rate: number;
+}
+
+const ExchangeRate = ({ currency, rate }: ExchangeRateProps) => {
+  const prevRate = useRef<number>(0);
   
   useEffect(() => {
     prevRate.current = rate;
+    //current value does not trigger re-renders. 
+    //useRef is useful when you want to persist values across renders without causing the component to re-render
   }, [rate]);
   
   return (
