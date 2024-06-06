@@ -22,7 +22,7 @@ Pojďme si ho vyzkoušet nejprve na úplně jednoduchém projektu bez Reactu a b
 1. VS Code je také potřeba správně nastavit. Následující nastavní přidáme do *JSON Settings*.
    ```
      "editor.codeActionsOnSave": {
-       "source.fixAll.eslint": true,
+       "source.fixAll.eslint": "explicit",
      }
    ```
 
