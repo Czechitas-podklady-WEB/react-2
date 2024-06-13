@@ -17,11 +17,16 @@ Formik obsahuje hook `useFormik`, který opět *úplně náhodou* funguje velmi 
 
 Naše komponenta bude vypadat takto:
 
-```jsx
+```tsx
 import { useFormik } from 'formik';
 
+interface FormDataType {
+  firstName: string;
+  lastName: string;
+}
+
 const Form = () => {
-  const formik = useFormik(
+  const formik = useFormik<FormDataType>({
     initialValues: {
       firstName: 'Jana',
       lastName: 'Novotná'
@@ -29,7 +34,7 @@ const Form = () => {
     onSubmit: (formData) => {
       console.log(formData);
     }
-  );
+  });
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -66,9 +71,12 @@ Můžeme si napsat validační funkci, která od Formiku dostane jako parametr o
 Je-li formulářový prvek nevalidní, vytvoříme v objektu vlastnost se jménem formulářového prvku, a do její hodnoty dáme chybovou zprávu pro toto pole.
 
 
-```jsx
-const validate = (values) => {
-  const errors = {};
+```tsx
+
+type FormDataErrorType = Partial<FormDataType>;
+
+const validate = (values: FormDataType) => {
+  const errors: FormDataErrorType = {};
 
   if (!values.firstName) {
     errors.firstName = 'Povinné pole';
@@ -90,7 +98,7 @@ Funkci pak předáme do hooku `useFormik`. Ve formuláři pak můžeme využít 
 
 Naše komponenta bude vypadat následovně:
 
-```jsx
+```tsx
 const Form = () => {
   const formik = useFormik(
     initialValues: {
@@ -123,7 +131,7 @@ const Form = () => {
         value={formik.values.lastName}
         onChange={formik.handleChange}
       />
-      { formik.errors.firstName ? <p>{formik.errors.firstName}</p> : null }
+      { formik.errors.lastName ? <p>{formik.errors.lastName}</p> : null }
 
       <button type="submit">Odeslat</button>
     </form>
@@ -137,7 +145,7 @@ Formik kromě objektů `initialValues`, `values` a `errors` obsahuje i objekt `t
 
 Aby vše fungovalo správně, musíme na každý prvek přidat ještě událost `onBlur`, která se volá pokaždé, když uživatel opustí daný prvek (ztratí *focus*).
 
-```jsx
+```tsx
 <input
   type="text"
   id="firstName"
@@ -150,7 +158,7 @@ Aby vše fungovalo správně, musíme na každý prvek přidat ještě událost 
 
 My potom můžeme využít objekt `touched` k tomu, abychom chyby zobrazili jen u těch polí, která už se uživatel pokusil vyplnit.
 
-```jsx
+```tsx
 {formik.touched.firstName && formik.errors.firstName ? (
   <p>{formik.errors.firstName}</p>
 ) : null}

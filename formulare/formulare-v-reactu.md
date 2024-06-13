@@ -9,12 +9,12 @@ Připomeňme si, jak jsme doposud s formuláři pracovali. Obvykle jsme:
 
 Kód naší komponenty může vypadat například takto:
 
-```jsx
+```tsx
 const Form = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstName, setFirstName] = useState<string>('');
+  const [lastName, setLastName] = useState<string>('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(firstName, lastName);
   }
@@ -47,16 +47,16 @@ Náš příklad zatím obsahuje dvě pole a nevypadá složitě. Představíme-l
 
 Nevýhodou našeho příkladu je třeba nutnost používat konkrétní funkce pro nastavování stavu pro jednotlivé hodnoty. Pojďme náš příklad upravit tak, aby používal jeden společný objekt pro všechna data ve formuláři.
 
-```jsx
+```tsx
 const Form = () => {
-  const [formData, setFormData] = useState({});
+   const [formData, setFormData] = useState<Record<string, string>>({firstName: '', lastName: ''});
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(formData);
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value

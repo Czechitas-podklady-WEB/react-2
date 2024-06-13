@@ -8,18 +8,18 @@ Vlastní hooky musí na začátku svého jména obsahovat slovo `use`, nazvěme 
 
 Do hooku potřebujeme vyseparovat stav a logiku, která se stará o náš formulář.
 
-```jsx
+```tsx
 const useForm = () => {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState<Record<string, string>>({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // ...
   }
@@ -69,18 +69,20 @@ Protože hook chceme používat univerzálně pro více formulářů, nemůžeme
 
 Náš hook bude vypadat následovně:
 
-```jsx
-const useForm = (initialValues = {}, onSubmit) => {
-  const [formData, setFormData] = useState(initialValues);
+```tsx
+const useForm = (
+  initialValues: Record<string, string> = {},
+  onSubmit: (fromData: Record<string, string>) => void) => {
+  const [formData, setFormData] = useState<Record<string, string>>(initialValues);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
   }
@@ -91,7 +93,7 @@ const useForm = (initialValues = {}, onSubmit) => {
 
 Naše komponenta zůstane zůstane v podstatě beze změny, pouze do hooku jako parametry předáme výchozí hodnoty formuláře a funkci, která se zavolá při odeslání formuláře.
 
-```jsx
+```tsx
 const Form = () => {
   const [formData, handleChange, handleSubmit] = useForm(
     {
