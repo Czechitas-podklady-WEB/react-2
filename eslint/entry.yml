@@ -5,4 +5,5 @@ sections:
   - linter
   - pravidla
   - pluginy
+  - prettier
   - projekt

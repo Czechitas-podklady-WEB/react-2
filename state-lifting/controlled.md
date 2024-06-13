@@ -6,8 +6,13 @@ V našem příkladu z předchozí lekce jsme tedy udělali z komonenty `Amount` 
 
 Nejprve upravíme komponentu `CartItem` tak, aby už nepoužívala stav `count`.
 
-```jsx
-const CartItem = ({ product, onAmountChange }) => {
+```tsx
+interface ICartItemProps {
+  product: IProduct;
+  onAmountChange: (newCount: number) => void;
+}
+
+const CartItem: React.FC<ICartItemProps> = ({ product, onAmountChange }) => {
   return (
     <div className="cart-item">
       <CartProduct name={product.name} price={product.price} />
@@ -21,11 +26,11 @@ Všimněte si callbacku `onAmountChange`, který potřebujeme, abychom se dozvě
 
 Nyní si pouze musíme dát dobrý pozor na správnou aktulizaci stavu `cartProducts`.
 
-```jsx
-const Cart = () => {
+```tsx
+const Cart : React.FC = () => {
   const [cartProducts, setCartProducts] = useState(products);
 
-  const handleAmountChange = (index, amount) => {
+  const handleAmountChange = (index: number, amount: number) => {
     const newProducts = [...cartProducts];
     newProducts[index].amount = amount;
     setCartProducts(newProducts);
@@ -40,9 +45,9 @@ const Cart = () => {
       <div className="cart__items">
         {cartProducts.map((product, index) => (
           <CartItem 
-            product={product}
-            onAmountChange={(amount) => handleAmountChange(index, amount)}
-          />
+            product={product} 
+            onAmountChange={amount => handleAmountChange(index, amount)} 
+            key={product.name} />
         ))}
       </div>
     </div>
@@ -52,7 +57,7 @@ const Cart = () => {
 
 Konečně jsme ve fázi, kdy můžeme spočítat celkový počet položek v košíku. Výpočet provedeme přímo v těle komponenty `Cart`, aby se aktualizoval s každou změnou stavu.
 
-```jsx
+```tsx
   let productCount = 0;
   cartProducts.forEach((product) => productCount += product.amount);
 

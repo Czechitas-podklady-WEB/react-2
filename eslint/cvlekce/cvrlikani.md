@@ -10,15 +10,18 @@ Abychom nemuseli používat backend, situaci si zjednodušíme tím, že budeme 
 Návrh HTML a CSS máte k dispozici [zde](https://github.com/Czechitas-podklady-WEB/cvrlikani-zadani). Můžete jej přesně následovat, nebo se jím pouze inspirovat.
 
 1. Na svém GitHubu si založte repozitář `cvrlikani`. Naklonujte jej k sobě do počítače.
-2. V naklonované složce založte nový React projekt s ESLintem pomocí
+1. V naklonované složce založte nový React projekt s ESLintem pomocí
    ```
-   npm init kodim-app@latest . react-eslint
+   npm create vite@latest .
    ```
-3. Rozmyslete si, jak bude váš projekt strukturovaný.
+   Vyberte projekt v Reactu s TypeScriptem.
+1. Podle návodu na předchozí stránce si do projektu přidejte Prettier a nastavte si ho dle svých představ.
+1. Rozmyslete si, jak bude váš projekt strukturovaný.
    - Jaké bude obsahovat komponenty? Jak se budou jmenovat?
    - Jaké budou vaše komponenty obshovat stavy? Jaká data budete ve stavech ukládat?
    - Jak spolu budou komponenty komunikovat?
-4. Jakmile máte v hlavě dobrý plán toho, co je třeba udělat, postupujte podle něj a naprogramujte funkční aplikaci. Během vývoje se řidťe ESLintem a dbejte na dobrou kulturu kódu.
+1. Jakmile máte v hlavě dobrý plán toho, co je třeba udělat, postupujte podle něj a naprogramujte funkční aplikaci.
+1. Během vývoje se řidťe ESLintem a dbejte na dobrou kulturu kódu. Všímejte si, kde vám Prettier formátuje kód. Je to proto, že se o hezké formátování kódu obvykle moc nestaráte? Nebo má Prettier jen jiný názor na to, jak by měl kód vypadat? Zkusíte si konfiguraci upravit, aby kód vypadal podle vašich představ? (Ne vždy to jde.)
 
 ## Nápady na rozšíření:
 

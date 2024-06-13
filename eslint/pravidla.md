@@ -1,6 +1,6 @@
 ## ESLint pravidla
 
-I když jsme ESLint základně nastavili, zatím nic nedělá. Je to proto, že jsme nespecifikovali žádná pravidla pro kvalitu našeho kódu. 
+I když jsme ESLint základně nastavili, zatím nic nedělá. Zatím jsme totiž nespecifikovali žádná pravidla pro kvalitu našeho kódu.
 
 ESLint obsahuje stovky pravidel pro různé situace. Tato pravidla se zapisují do konfigurace pod klíč `rules`. Takto například řekneme, že pokud ESLint uvidí neexistující proměnnou, má ji označit jako chybu.
 
@@ -132,7 +132,7 @@ Detailnější srovnání všech příruček najdete například v [tomto člán
 
 ### AirBnB style guide
 
-Ve všech JavaScroptových kurzech na těchto stránkách používáme příručku od AirBnB. Abychom ji mouhli použít ve svých projektech, musíme nainstalovat balíček [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+Pokud bychom například chtěli použít příručku AirBnB, musíme nainstalovat balíček [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
 
 ```js
 npm install -D eslint-config-airbnb

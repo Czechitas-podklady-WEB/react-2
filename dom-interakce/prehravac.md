@@ -4,10 +4,10 @@ Dalším případem, kdy se nám v Reactu hodí hook `useRef` může být přehr
 
 Jako ukázku si vyrobíme tedy jednoduchou komponentu `MusicPlayer`, která bude zatím obsahovat pouze tlačítko na spuštění a zastavení přehrávání. Jako soubor k přehrávání použijeme skladbu s názvem [Meaning](assets/vlad-gluschenko-meaning.mp3).
 
-```jsx
-const MusicPlayer = ({ src }) => {
-  const [playing, setPlaying] = useState(false);
-  const audioRef = useRef();
+```tsx
+const MusicPlayer = ({ src }: {src: string}) => {
+  const [playing, setPlaying] = useState<boolean>(false);
+  const audioRef = useRef<HTMLAudioElement>(null!);
 
   useEffect(() => {
     if (playing) {

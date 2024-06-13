@@ -10,7 +10,7 @@ lessons:
   - state-lifting
   - state-management
   - dom-interakce
+  - eslint
   - formulare
   - ui-knihovny
   - webpack
-  - eslint

@@ -39,8 +39,10 @@ module.exports = {
 };
 ```
 
-Toto je už hodně instalování a nastavování. Nástroj `create-czechitas-app` má proto speciální generátor zvaný `react-eslint`, který vytváří Reactový projekt s už nakonfigurovaným ESLintem. Pro vytvoření nového projektu tak stačí napsat
+Toto je už hodně instalování a nastavování. Naštěstí většina startovačů projektů (včetně námi používaného Vite) vytváří Reactový projekt s už nakonfigurovaným ESLintem. Pro vytvoření nového projektu tak stačí napsat
 
+```bash
+npm create vite@latest muj-projekt
 ```
-npm init kodim-app@latest myapp react-eslint
-```
+
+A v nabídce vybrat, že chceme dělat project v Reactu s použitím TypeScriptu. Vite nám nainstaluje všechny potřebné pluginy a vytvoří konfiguraci pro ESLint.
