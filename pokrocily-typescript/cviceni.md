@@ -1,0 +1,3 @@
+## Cvičení
+
+::exc[cvlekce/cviceni]
