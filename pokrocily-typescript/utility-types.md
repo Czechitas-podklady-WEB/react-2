@@ -12,10 +12,10 @@ Abyste se tomu vyhnuli, můžete si *props* komponenty `FavoriteAnimal` vytvoři
 
 ```ts
 type User = {
-	name: string;
-	age: number
-	hobbies: Hobby[];
-	favoriteAnimal: 'dog' | 'cat' | 'parrot';
+  name: string;
+  age: number
+  hobbies: Hobby[];
+  favoriteAnimal: 'dog' | 'cat' | 'parrot';
 }
 
 type Props = Pick<User, 'favoriteAnimal'>;
@@ -45,14 +45,14 @@ A příklad použití v praxi? Představte si, že máte vyrobit formulář, ve 
 
 ```ts
 interface User {
-	name: string;
-	email: string;
-	phone?: string;
-	address?: string;
+  name: string;
+  email: string;
+  phone?: string;
+  address?: string;
 }
 
 function updateUserDetails(user: User, details: Partial<User>): User {
-	return { ...user, ...details };
+  return { ...user, ...details };
 }
 ```
 
@@ -74,10 +74,10 @@ Spojit je dohromady je jednoduché a máme mnoho možností, pro účely našeho
 
 ```ts
 const flowerColors {
-    yellow: ['sunflower'],
-    red: ['rose', 'tulip'],
-    pink: ['rose', 'tulip']
-    white: ['rose']
+  yellow: ['sunflower'],
+  red: ['rose', 'tulip'],
+  pink: ['rose', 'tulip']
+  white: ['rose']
 }
 ```
 
@@ -101,8 +101,8 @@ Problém je, že JavaScript nám dovoluje občas dělat dost ošklivé věci. I 
 const arrayOfNumbers: ReadonlyArray<number> = [1, 2, 3]
 
 type Props = Readonly<{
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 }>;
 ```
 
