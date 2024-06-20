@@ -1,20 +1,14 @@
 ## Test
 
 <details>
-  <summary>
-    Je veškerý validní javascriptový kód zároveň validním typescriptovým kódem?
-  </summary>
-
+  <summary>Je veškerý validní javascriptový kód zároveň validním typescriptovým kódem?</summary>
   Ano! TypeScript je tzv. "superset" JavaScriptu. To znamená, že obsahuje a umí totéž, co JavaScript, jenom ho rozšiřuje o typy. To nám hodně ulehčuje přechod na TS ve velkých projektech - náš projekt může kombinovat `.js` a `.ts` soubory.
 
   ::fig{src=assets/js-vs-ts.png size=70}
 </details>
 
 <details>
-  <summary>
-    Co znamená otazník v typu `{ name?: string; }`
-  </summary>
-
+  <summary>Co znamená otazník v typu `{ name?: string; }`</summary>
   Property `name` je nepovinné.
 </details>
 
