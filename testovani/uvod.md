@@ -1,6 +1,6 @@
-## Pokročilý TypeScript
+## Testování kódu
 
-Popis...
+Tady zatím nic není...
 
 ## Postup
 

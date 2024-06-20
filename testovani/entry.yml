@@ -2,5 +2,5 @@ title: Testování
 lead: Naučíme se testovat náš kód pomocí unit testů a end-to-end testů.
 access: claim
 sections:
-  - unit-testy
+  - uvod
   - cv-cviceni

@@ -1,6 +1,6 @@
 ## Pokročilý TypeScript
 
-Popis...
+Tady zatím nic není...
 
 ## Postup
 
