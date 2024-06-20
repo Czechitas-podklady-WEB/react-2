@@ -61,4 +61,4 @@ type NewType & OldType = {
 
 Bohužel můžeme. Stačí za proměnnou přidat `as NewType`. Ideálně bychom to dělat neměli, protože pak ztrácí TypeScript smysl, ale může se stát, že si potřebujeme jen něco otestovat a tohle nám může pomoct. Kde se nám ještě může hodit je pokud od nepořádného kolegy dostaneme nějaké ošklivé `any`, ale my víme, že to je string a potřebujeme zjistit jeho délku, `as string` by nám pomohlo (a pak šup to `any` opravit!).
 
-::fig{src=assets/as-any.png size=70}
+::fig{src=assets/as-any.jpg size=70}
