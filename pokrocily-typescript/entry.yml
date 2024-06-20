@@ -2,5 +2,9 @@ title: Pokročilý TypeScript
 lead: Ukážeme si další možnosti, které nám TypeScript nabízí.
 access: claim
 sections:
-  - uvod
-  - cv-cviceni
+  - literal-types
+  - keyof-operator
+  - test
+  - generics
+  - utility-types
+  - cviceni
