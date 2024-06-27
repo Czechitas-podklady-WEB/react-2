@@ -33,9 +33,22 @@ Můžete si také nainstalovat [doplněk Vitest do VS Code](https://marketplace.
 
 ### Kam psát testy
 
-Soubory s testy by se vždy měly jmenovat `*.test.ts` nebo `*.spec.ts`. Testy můžeme umístít přímo k souboru, který testujeme, nebo je mít odděleně ve složce, která se jmenuje `tests` (uvnitř složky `src`).
+Soubory s testy by se vždy měly jmenovat `*.test.ts` nebo `*.spec.ts`.
 
-Pokud píšeme test pro konkrétní komponentu, je dobrým zvykem pojmenovat soubor s testem stejně jako se jmenuje komponenta. Například:
+Testy můžeme umístit do složky  `tests` (v kořenové složce projektu). Později do této složky umístíme i soubor `setup.ts`, kde nastavíme další testovací nástroje.
+
+```
+.
+├─ src
+│  └─ App.tsx
+├─ tests
+│  ├─ setup.ts
+│  └─ some-other.test.ts
+├─ package.json
+└─ vite.config.ts
+```
+
+Pokud píšeme test pro konkrétní komponentu, je dobrým zvykem pojmenovat soubor s testem stejně jako se jmenuje komponenta a umístit ji do stejné složky. Například:
 
 ```
 .
@@ -45,19 +58,8 @@ Pokud píšeme test pro konkrétní komponentu, je dobrým zvykem pojmenovat sou
 └─ Component.test.ts
 ```
 
-Případně můžeme testy dávat i do složky `tests` v kořenové složce projektu, kam případně později umístíme i nastavení pro pokročilejší testy:
+Není to ale podmínka. Nástroj, který budeme pro testování používat, si naše testy najde a spustí skoro kdekoliv, pokud se jmenují správně `*.test.tsx`. Různé týmy mají různé zvyklosti, jak si testy v projektu organizovat.
 
-```
-.
-├─ src
-│  └─ App.tsx
-├─ tests
-│  ├─ setup.ts
-│  └─ some-other.test.ts
-└─ vite.config.ts
-```
-
-Do souboru `vite.config.ts` budeme později přidávat malou konfiguraci pro další testovací knihovny.
 
 ### Struktura testovacího souboru
 
@@ -76,13 +78,18 @@ Vytvořme si v kořenové složce projektu složku `tests` a v ní soubor `first
 ```ts
 import { describe, test, it, expect } from 'vitest'
 
+// test suite
 describe('Truthy statements', () => {
 
+  // test
   test('1 + 1 equals 2', () => {
+    // assertion
     expect(1+1).toEqual(2)
   })
 
+  // test
   it('should equal to true', () => {
+    // assertion
     expect(!false).toEqual(true)
   })
 
@@ -97,7 +104,7 @@ Tento konkrétní test je nám samozřejmě k ničemu, ale jednoduše na něm vi
 
 ### Testování funkcí
 
-V reálné aplikaci budeme mít například soubor s několika funkcemi. Jednotlivé funkce v souboru exportujeme, abychom je mohli na jiném místě v aplikaci naimportovat a použít. To stejné uděláme i v našem testovacím souboru - funkce si naimportujeme a otestujeme, zda s různými hodnotami vrací správné výsledky.
+Pod pojmem *unit test* si většinou představíme základní testování funkcí. V reálné aplikaci budeme mít například soubor s několika funkcemi. Jednotlivé funkce v souboru exportujeme, abychom je mohli na jiném místě v aplikaci naimportovat a použít. To stejné uděláme i v našem testovacím souboru - funkce si naimportujeme a otestujeme, zda s různými hodnotami vrací správné výsledky.
 
 Představme si jednoduchý soubor *math.ts*:
 ```js
