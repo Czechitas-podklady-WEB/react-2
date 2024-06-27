@@ -3,7 +3,7 @@
 `keyof` operátor nám pomůže získat typ z klíčů objektu.
 
 ```ts
-const fontWeights: {
+const fontWeights = {
   normal: '400',
   semibold: '600',
   medium: '500',
@@ -11,7 +11,7 @@ const fontWeights: {
   extrabold: '800',
 };
 
-type FontWeight = keyof fontWeights;
+type FontWeight = keyof typeof fontWeights;
 ```
 
 `FontWeight` type je teď `'normal' | 'semibold' | 'medium' | 'bold' | 'extrabold'`.

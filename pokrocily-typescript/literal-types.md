@@ -29,12 +29,12 @@ const colors = ['yellow', 'red', 'pink', 'white'] as const;
 Super! Když teď najedeme myškou na `flowers`, TypeScript už nám zobrazí, že jejich typ není `string[]`, ale buď `rose` nebo `sunflower` nebo `tulip`. Teď už nám zbývá jenom tyhle typy použít v našem objektu a na to má TypeScript speciální syntaxi, kterou si budete muset zapamatovat.
 
 ```ts
-type Flower = (typeof flowers)[number];
-type Color = (typeof colors)[number];
+type FlowerType = (typeof flowers)[number];
+type ColorType = (typeof colors)[number];
 
 type Flower = {
-  name: Flower;
-  color: Color;
+  name: FlowerType;
+  color: ColorType;
   hasThorns: boolean;
 }
 ```

@@ -9,7 +9,7 @@ Ano! TypeScript je tzv. "superset" JavaScriptu. To znamená, že obsahuje a umí
 ::fig{src=assets/js-vs-ts.png size=70}
 
 
-### 2. Co znamená otazník v typu `{ name?: string; }` ?
+### 2. Co znamená otazník v typu `{ name?: string; }`?
 
 Property `name` je nepovinné.
 
@@ -31,7 +31,7 @@ Typ proměnné se bude řídit literal types, místo např. `string[]` bude při
 
 TypeScript si spoustu typů odvodí sám i bez naší pomoci. Pokud do proměnné vložíme string `"hello"`, nemusíme specifikovat, že je to proměnná typu `string`.
 
-Stejně tak pokud třeba `useState("hello")` rovnou dostane "hello" jako initial hodnotu, TypeScript už ví, že do něj může	nastavit pouze `string`. Pokud by ale initial hodnota byla prázdná `useState(null)`, TypeScript by si myslel, že žádnou jinou hodnotu než `null` state mít nemůže a musíme ho otypovat samy jako `useState&lt;string | null&gt;(null)`.
+Stejně tak pokud třeba `useState("hello")` rovnou dostane "hello" jako initial hodnotu, TypeScript už ví, že do něj může	nastavit pouze `string`. Pokud by ale initial hodnota byla prázdná `useState(null)`, TypeScript by si myslel, že žádnou jinou hodnotu než `null` state mít nemůže a musíme ho otypovat samy jako `useState<string | null>(null)`.
 
 ### 6. Proč by TypeScript měl být `devDependency`?
 

@@ -19,7 +19,7 @@ Nezdá se vám to jako hodně opakování? V případě takhle krátké a jasné
 S použitím generiky můžeme naše tři funkce na získání prvního prvku pole spojit do jedné:
 
 ```ts
-const getFirstItem<T> = (item: T[]): T => T[0];
+const getFirstItem<T> = (items: T[]): T => items[0];
 ```
 
 `getFirstItem([1, 2, 3])` nám vrátí číslo `1`. `getFirstItem([a, b, c])` nám vrátí `a`. A my už se nemusíme opakovat. :)
