@@ -7,4 +7,6 @@ sections:
   - testovani-komponent
   - emulace-udalosti
   - pokryti-testy
-  - cv-cviceni
+  - cv-unit-testy
+  - end-to-end
+  - cv-end-to-end-testy
