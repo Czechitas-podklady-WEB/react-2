@@ -45,7 +45,7 @@ Do vlastnosti `sendAt` vlož hodnotu `new Date()`, což bude aktuální datum a 
 
 ## Inbox
 
-Jednotlivé e-mailové zprávy je potřeba mít uložené v poštovní schránce. Každá emailová schránka má svůj název, vlastníka a seznam zpráv.
+Jednotlivé e-mailové zprávy je potřeba mít uložené v poštovní schránce.
 
 Vytvoř typ `EmailInbox` jako pole emailových zpráv
 
@@ -59,5 +59,5 @@ Pokud se nudíš, můžeš zkusit doplnit následující:
   * `filename` (jméno souboru)
   * `size` (velikost v bytech)
   * `contentType`, který bude obsahovat tzv. MIME type přiloženého souboru (viz. dokumentace MDN: [Common Media Types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types))
-- pokud chceš, můžeš použít union values type a `contentType` přílohy omezit např. jen na obrázky GIF, JPEG, PNG a dokumenty DOCX a XLSX z Wordu a Excelu)
+- pokud chceš, můžeš použít union values type a `contentType` přílohy omezit např. jen na obrázky GIF, JPEG, PNG a dokumenty DOCX a XLSX z Wordu a Excelu
 - do interface pro emailovou zprávu přidej vlastnost `attachments` a nastav ji tak, že může obsahovat pole příloh

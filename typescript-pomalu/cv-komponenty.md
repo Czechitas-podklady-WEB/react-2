@@ -1,3 +1,3 @@
 ## Cvičení: Komponenty
 
-::exc[cvlekce/]
+::exc[cvlekce/ukolnicek]

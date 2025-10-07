@@ -85,4 +85,3 @@ return <form onSubmit={handleSubmit}>...</form>;
 | `<div>` |`React.MouseEvent<HTMLDivElement>` |
 | `<select>` |`React.ChangeEvent<HTMLSelectElement>` |
 | `<a>` |`React.MouseEvent<HTMLAnchorElement>` |
-
