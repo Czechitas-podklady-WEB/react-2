@@ -111,7 +111,7 @@ type Direction = 'sever' | 'jih' | 'východ' | 'západ';
 
 let direction: Direction = 'jih';
 
-// chyba, m;6e obsahovat pouye sever, jih, východ nebo západ
+// chyba, může obsahovat pouze sever, jih, východ nebo západ
 direction = 'rovně';
 ```
 

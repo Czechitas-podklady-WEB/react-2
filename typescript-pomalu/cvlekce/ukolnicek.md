@@ -3,7 +3,7 @@ title: Úkolníček
 demand: 3
 ---
 
-Budeme vytvářet jednoduchou aplikaci pro evidenci úkolů. Klasický ToDo list, který musí každý programátor za život udělat alespoň 37x.
+Budeme vytvářet jednoduchou aplikaci pro evidenci úkolů. Klasický ToDo list, který musí každý programátor za život naprogramovat alespoň 137x.
 
 ## Založení projektu
 
@@ -20,7 +20,7 @@ Budeme vytvářet jednoduchou aplikaci pro evidenci úkolů. Klasický ToDo list
    - `title` - název úkolu
    - `description` - popis úkolu
    - `done` - boolean, zda je úkol splněný nebo ne
-3. Vytvoř interface `ItemData` a nastav ho jako typ pro props komponenty.
+3. Vytvoř interface `ItemProps` a nastav ho jako typ pro props komponenty.
 4. Komponenta zobrazí div, ve kterém budou dva odstavce. V prvním odstavci bude tučným písmem název úkolu. Ve druhém odstavci bude popis úkolu.
 5. Vytvoř si v CSS soubor pro komponentu, naimportuj ho do komponenty a přidej do něj třídu `.done` a nastav do ní přeškrtnuté písmo `text-decoration: line-through;`.
 6. Pokud má prop `done` hodnotu `true`, přidej divu třídu `done`.
@@ -34,5 +34,6 @@ Budeme vytvářet jednoduchou aplikaci pro evidenci úkolů. Klasický ToDo list
 2. Komponenta bude přijímat dvě props:
    - `title` - název seznamu (např. "Domácí práce", "Nákup" apod.)
    - `items` - pole položek v seznamu, každá položka je typu `ItemData`, který je nadefinovaný v předchozí komponentě, budeš ho odtamtud potřebovat naimportovat
-3. Zařid, aby se pomocí `map` v komponentě zobrazil seznam položek, tj. přemapuj pole `items` na seznam komponent `Item`.
-4. Není to ideální, ale nemáme nic lepšího, tak jako `key` při mapování použij vlastnost `title`.
+3. Vytvoř s těmito vlastnostmi interface `ListProps` a nastav ho jako typ pro props komponenty.
+4. Zařid, aby se pomocí `map` v komponentě zobrazil seznam položek, tj. přemapuj pole `items` na seznam komponent `Item`.
+5. Jako `key` při mapování použij vlastnost `title`. Není to ideální, ale nemáme nic lepšího 😀

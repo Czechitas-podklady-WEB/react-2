@@ -85,3 +85,20 @@ return <form onSubmit={handleSubmit}>...</form>;
 | `<div>` |`React.MouseEvent<HTMLDivElement>` |
 | `<select>` |`React.ChangeEvent<HTMLSelectElement>` |
 | `<a>` |`React.MouseEvent<HTMLAnchorElement>` |
+
+## Jak zjistit, jakého typu je událost
+
+Můžeš hledat na Googlu nebo se zeptat ChatuGPT. Nejjednodušší ale je, nechat si napovědět přímo v editoru. Stačí do události napsat anonymní funkci, která přijímá parametr `e`, a pak se na něj myší postavit. VS Code ti ukáže nápovědu TypeScriptu, kde bude uvedeno, jakého typu event být.
+
+Například chci reagovat na kliknutí na `<div>`:
+
+```tsx
+export const ClickableDiv = () => {
+  return (
+    <div onClick={(e) => {}}> Klikni na mě </div>
+  )
+}
+```
+
+Když najedu myší na `e`, VS Code mi řekne, že `e` je typu `React.MouseEvent<HTMLDivElement>`.
+
