@@ -4,6 +4,7 @@ image: assets/react.svg
 lessons:
   - opakovani
   - typescript
+  - typescript-pomalu
   - hodnoty-stav
   - lifecycle
   - zastarale-hodnoty

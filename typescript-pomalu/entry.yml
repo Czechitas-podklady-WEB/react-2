@@ -1,0 +1,10 @@
+title: TypeScript pomalu
+lead: Doplňková lekce na projití základů TypeScriptu.
+access: claim
+sections:
+ - zakladni-typy
+ - cv-zakladni-typy
+ - funkce
+ - cv-funkce
+ - komponenty
+ - stav-udalosti
