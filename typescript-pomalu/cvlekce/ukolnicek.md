@@ -37,3 +37,27 @@ Budeme vytvářet jednoduchou aplikaci pro evidenci úkolů. Klasický ToDo list
 3. Vytvoř s těmito vlastnostmi interface `ListProps` a nastav ho jako typ pro props komponenty.
 4. Zařid, aby se pomocí `map` v komponentě zobrazil seznam položek, tj. přemapuj pole `items` na seznam komponent `Item`.
 5. Jako `key` při mapování použij vlastnost `title`. Není to ideální, ale nemáme nic lepšího 😀
+6. V komponentě `App` si vytvoř stav `tasks`, který bude obsahovat pole úkolů v úkolníčku.
+   Použít můžeš např. tato vzorová data:
+   ```ts
+   [
+     {
+        title: 'Příprava prezentace',
+        description: 'Vytvořit prezentaci pro páteční meeting s klientem.'
+     },
+     {
+        title: 'Kontrola e-mailů',
+        description: 'Projít doručenou poštu a odpovědět na důležité zprávy.'
+     },
+     {
+        title: 'Plánování kampaně',
+        description: 'Naplánovat marketingovou kampaň na příští měsíc.'
+     },
+     {
+        title: 'Testování aplikace',
+        description: 'Otestovat nové funkce a nahlásit případné chyby.'
+     }
+   ];
+   ```
+7. Nezapomeň stavu `tasks` nastavit správný typ. Je to pole úkolů, jejichž tvar máš nadefinovaný v komponentě `Item`.
+8. V komponentě `App` použij komponentu `List` pro seznam úkolů a předej do ní jako prop obsah stavu `tasks`.
