@@ -7,10 +7,14 @@ const App = () => {
   const [settings, setSettings] = useState({
     currency: 'CZK',
   });
-  
+
   return (
     <SettingsContext.Provider value={settings}>
 ```
+
+*Poznámka: zde za účelem jednoduchosti kódu vypouštíme, ale protože jsem v TypeScriptu, tak bychom samozřejmě pro stav vytvořili i přesný typ a při vytváření stavu ho použili.*
+
+
 
 Zároveň je však třeba všem, kdo context používají poskytnout příležitost jej nějak změnit. Například nastavit jinou měnu. K tomu si vyrobíme funkci `setCurrency`.
 
@@ -19,7 +23,7 @@ const App = () => {
   const [settings, setSettings] = useState({
     currency: 'CZK',
   });
-  
+
   const setCurrency = (currency) => {
     setSettings({ ...settings, currency });
   }
