@@ -10,10 +10,10 @@ lessons:
   - zastarale-hodnoty
   - state-lifting
   - state-management
-  - dom-interakce
-  - eslint
-  - formulare
   - pokrocily-typescript
+  - dom-interakce
+  - formulare
   - testovani
   - ui-knihovny
+  - eslint
   - webpack
