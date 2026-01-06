@@ -2,77 +2,56 @@
 
 Protože pracujeme v Reactu, budeme asi nejčastěji potřebovat otestovat naše komponenty.
 
-### jsdom
+### Instalace balíčků
 
-Abychom mohli testovat komponenty, potřebujeme do projektu přidat knihovnu `jsdom`, která částečně emuluje API prohlížeče a Vitest se tak může podívat na HTML výstup komponenty.
-
-```bash
-npm install --save-dev jsdom
-```
-
-Knihovnu **jsdom** musíme v konfiguračním souboru `vite.config.ts` nastavit jako prostředí pro běh testů:
-
-```ts
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-export default defineConfig({
-  plugins: [react()],
-
-  // ⬇️ přidáme tento blok ⬇️
-  test: {
-    environment: 'jsdom',
-  }
-})
-```
-
-### React Testing Library
-
-Dále budeme potřebovat i React Testing Library, která nám umožní psát testy, které napodobují, jak s aplikací interaguje uživatel a jaký vidí výstup.
-
-Nebudeme tedy řešit, implementační detaily, ale pouze to, zda se komponenta správně chová.
+Nejprve si nainstalujeme a nakonfigurujeme všechny potřebné balíčky:
 
 ```bash
-npm install --save-dev @testing-library/react @testing-library/jest-dom
+npm i -D vitest jsdom @testing-library/react @testing-library/user-event @testing-library/jest-dom
 ```
 
-Protože React Testing Library pro nás bude renderovat jednotlivé komponenty, je zapotřebí, aby po sobě vždy uklidila a provedla tzv. *cleanup*. Abychom to nemuseli dělat manuálně u každého testu, můžeme si připravit malý soubor, který nastaví automatický cleanup po každém testu.
+Instalujeme:
+- **jsdom**: knihovna, která částečně emuluje API prohlížeče a Vitest se tak může podívat na HTML výstup komponenty a provádět oproti tomuto výstupu testy.
+- **React Testing Library**: knihovna, která nám umožní psát testy, které napodobují, jak s aplikací interaguje uživatel a jaký vidí výstup. Nebudeme tedy řešit, implementační detaily, ale pouze to, zda se komponenta správně chová.
 
-Ve složce `tests` v kořenové složce projektu si připravme soubor `setup.ts`:
+### Konfigurace testovacího prostředí
 
-```ts
-import { afterEach } from 'vitest'
-import { cleanup } from '@testing-library/react'
-import '@testing-library/jest-dom/vitest'
-
-// runs a clean after each test case (e.g. clearing jsdom)
-afterEach(() => {
-  cleanup();
-})
-```
-
-A zároveň nastavme Vite, aby s tímto souborem počítalo a umělo použít nové assertion metody z React Testing Library.
-
-Upravme ještě jednou soubor `vite.config.ts`:
+V projektu si vytvoříme **nový soubor** `vitest.config.ts`, ve kterém pak knihovnu **jsdom** nastavíme jako prostředí pro běh testů:
 
 ```ts
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
-  plugins: [react()],
-
   test: {
     environment: 'jsdom',
-
-    // ⬇️ doplníme následující 2 řádky ⬇️
     globals: true,
-    setupFiles: './tests/setup.ts',
-  }
+    setupFiles: './src/tests/setup.ts',
+  },
 })
 ```
 
-### Testování komponenty
+Ve složce `tests`, kterou už v projektu máme z dřívějška, si připravme soubor `setup.ts`, do kterého vložme následující řádek:
+
+```ts
+import '@testing-library/jest-dom/vitest'
+```
+
+Tím se nám zpřístupní ruzné podpůrné funkce pro prácí s DOM elementy v testech.
+
+### Konfigurace pro TypeScript
+
+Aby TypeScript znal testovací funkce, které budeme používat, přidejme následující do souboru `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
+  }
+}
+```
+
+
+## Testování komponenty
 
 Nyní můžeme v našich testech renderovat jednotlivé komponenty a kontrolovat, jestli mají požadovaný výstup.
 
